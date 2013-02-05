@@ -1,8 +1,19 @@
 class Exo5{
 
 public static String convertIntToString(int x){
+	boolean negativeNumber = false;
+	String result = "";
+	int digit;
+	int value = x;
 
-	return "";
+	if (x<0) {negativeNumber = true; value = - value;}
+	while (value!=0){
+		digit = value%10;
+		result = (char)(digit+48)+result;
+		value = value / 10;
+	}
+	if (negativeNumber) result = "-"+result;
+	return result;
 }
 
 public static void main(String[] args) {
