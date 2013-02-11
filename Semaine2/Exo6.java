@@ -21,7 +21,7 @@ public static double[] sumVector(double v1[], double v2[]){
 	}
 
 public static void testVecteur3D(){
-	double v1 [] = {1, 1, 1};
+	double v1 [] = {1, 1, 1}; // v1[0] = 1; v1[1] = 1; v1[2] = 1;
 	double v2 [] = {2, 2, 2};
 	double zero [] = {0, 0, 0};
 	double result [] = {3, 3, 3};
