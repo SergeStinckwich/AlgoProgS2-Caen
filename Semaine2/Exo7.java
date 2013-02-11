@@ -33,13 +33,16 @@ class Exo7 {
 					result[i][j] = result[i][j]+ a[i][k]*b[k][j];
 		return result;
 	}
-	
-	public static void main(String[] args) {
-	int a[][] = {{1, 7, 5}, {2, 8, 14}, {3, 9, -6}};
-	int b[][] = {{-2, 4, 11}, {6, 3, -4}, {5, 8, 0}};
 
-	System.out.println(asString(a));
-	System.out.println(asString(sum(a,b))); 
-	System.out.println(asString(product(a,b)));
+	public static void testMatrices(){
+		int a[][] = {{1, 7, 5}, {2, 8, 14}, {3, 9, -6}};
+		int b[][] = {{-2, 4, 11}, {6, 3, -4}, {5, 8, 0}};
+		System.out.println(asString(a));
+		System.out.println(asString(sum(a,b))); 
+		System.out.println(asString(product(a,b)));
+	}
+
+	public static void main(String[] args) {
+		testMatrices();
 	}
 }
