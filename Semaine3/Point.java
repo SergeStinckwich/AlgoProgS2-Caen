@@ -1,30 +1,26 @@
 class Point  {
 
-	private int x;
-	private int y;
+private int x;
+private int y;
 
-public Point(){
-	x = 0;
-	y = 0;
-}
+public int getX(){ return x;}
 
-public Point(int u, int v){
-	x = u;
-	y = v;
-}
+public int getY(){ return y;}
 
-public int getX(){
-	return x;
-}
+public void setX(int a){ x = a;}
 
-public int getY(){
-	return y;
-}
+public void setY(int b){ y = b;}
+
+public Point(){ x = 0; y = 0;}
+public Point(int a, int b){ x = a; y = b;}
 
 public static void main(String[] args) {
-	Point p1 = new Point();	
-	Point p2 = new Point(2,3);
-	System.out.println(p1.getX());
+	Point p = new Point();
+	System.out.println(p.x);
+	Point z = new Point(3,4);
+	System.out.println(z.x);
+	System.out.println(z.getX());
+	z.setX(0);
+	System.out.println(z.getX());
 }
-
 }

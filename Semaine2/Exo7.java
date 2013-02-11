@@ -8,10 +8,10 @@ class Exo7 {
 			result = result + "{";
 			for (int j= 0; j < m[0].length; j++){
 				result = result + (new Integer(m[i][j])).toString();
-				if (j != m[0].length -1) result = result + ",";
+				if (j != m[0].length-1) result = result + ",";
 			}
 			result = result + "}";
-			if (i != m.length -1) result = result + ",";
+			if (i != m.length-1) result = result + ",";
 		}
 		result = result + "}";
 	return result;
@@ -35,11 +35,14 @@ class Exo7 {
 	}
 
 	public static void testMatrices(){
-		int a[][] = {{1, 7, 5}, {2, 8, 14}, {3, 9, -6}};
-		int b[][] = {{-2, 4, 11}, {6, 3, -4}, {5, 8, 0}};
-		System.out.println(asString(a));
-		System.out.println(asString(sum(a,b))); 
-		System.out.println(asString(product(a,b)));
+		int a[][] = {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}};
+		int b[][] = {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}};
+		System.out.println(asString(a).equals(
+				"{{1,1,1},{1,1,1},{1,1,1}}"));
+		System.out.println(asString(sum(a,b)).equals(
+				"{{2,2,2},{2,2,2},{2,2,2}}")); 
+		System.out.println(asString(product(a,b)).equals(
+				"{{3,3,3},{3,3,3},{3,3,3}}"));
 	}
 
 	public static void main(String[] args) {
