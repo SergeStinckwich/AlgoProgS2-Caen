@@ -16,7 +16,8 @@ class Person {
 
 	public boolean equals(Person p) {
 		return (this.name.equals(p.name))&&(this.address.equals(p.address))&&
-				(this.age == p.age);}
+				(this.age == p.age);
+			}
 
 	public String ageCategory() {
 		if (age>60) return "Old people";
@@ -43,7 +44,6 @@ class Person {
 				System.out.println(groupOfThreePerson[i].ageCategory());
 				System.out.println(groupOfThreePerson[i].residenceCategory());
 				System.out.println();
+			}
 		}
-	}
-
 }
