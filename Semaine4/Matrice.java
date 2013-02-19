@@ -76,6 +76,18 @@ class Matrice {
 		return result;
 	}
 
+	// public Matrice addOneRow()
+	// {
+	// 	this.height = this.height+1;
+	// 	double newValues [][] = new double[this.width][this.height];
+
+	// 	for (int i=0; i < this.width; i++)
+	// 		for (int j=0; j < this.height-1; j++)
+	// 			newValues[i][j] = m[i][j];
+	// 	m = newValues;
+	// 	return this;
+	// }
+
 	public static void main(String args[]){
 		double m[][] 	= {{1.0, 1.0, 1.0},
 						   {1.0, 1.0, 1.0},
@@ -85,7 +97,11 @@ class Matrice {
 		Matrice zero 	= Matrice.zeroedMatrice(3, 3);
 		Matrice unity 	= Matrice.identityMatrice(3, 3);
 
-		System.out.println(a.width() == 3);
+//		System.out.println(a.addOneRow());
+//		System.out.println(a.addOneRow().toString().equals(
+//			"{{1.0, 1.0, 1.0, 0.0}, {1.0, 1.0, 1.0, 0.0}, {1.0, 1.0, 1.0, 0.0}}"));
+
+		System.out.println(a.width() == 4);
 		System.out.println(a.height() == 3);
 
 		System.out.println(a.toString().equals(
