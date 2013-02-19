@@ -71,15 +71,13 @@ class Matrice {
 
 
 	public static void main(String args[]){
-		double m[][] = {{1.0, 1.0, 1.0},
-						{1.0, 1.0, 1.0},
-						{1.0, 1.0, 1.0}};
-
-
+		double m[][] 	= {{1.0, 1.0, 1.0},
+						   {1.0, 1.0, 1.0},
+						   {1.0, 1.0, 1.0}};
 		Matrice a 		= new Matrice(m);
 		Matrice b 		= new Matrice(m);
-		Matrice zero 	= zeroedMatrice(3, 3);
-		Matrice unity 	= unityMatrice(3, 3);
+		Matrice zero 	= Matrice.zeroedMatrice(3, 3);
+		Matrice unity 	= Matrice.unityMatrice(3, 3);
 
 		System.out.println(a.toString().equals(
 				"{{1.0, 1.0, 1.0}, {1.0, 1.0, 1.0}, {1.0, 1.0, 1.0}}"));
