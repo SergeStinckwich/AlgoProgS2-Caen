@@ -5,7 +5,10 @@ private double y;
 private double z;
 
 public Vector3D(double xInit, double yInit, double zInit){
-	x = xInit; y = yInit; z = zInit;}
+	x = xInit;
+	y = yInit;
+	z = zInit;
+}
 
 public Vector3D(Vector3D v){
 	this.x = v.x;
@@ -26,17 +29,17 @@ public static double scalarProduct(Vector3D v1, Vector3D v2){
 }
 
 public double scalarProduct(Vector3D v){
-		return scalarProduct(this, v);
+		return Vector3D.scalarProduct(this, v);
 	}
 
 public static Vector3D crossProduct(Vector3D v1, Vector3D v2){
 	return new Vector3D(v1.y*v2.z - v1.z*v2.y,
-					v1.z*v2.x - v1.x*v2.z,
-					v1.x*v2.y - v1.y*v2.x);
+						v1.z*v2.x - v1.x*v2.z,
+						v1.x*v2.y - v1.y*v2.x);
 }
 
 public Vector3D crossProduct(Vector3D v){
-	return crossProduct(this, v);
+	return Vector3D.crossProduct(this, v);
 }
 
 public static Vector3D sum(Vector3D v1, Vector3D v2){
@@ -44,9 +47,10 @@ public static Vector3D sum(Vector3D v1, Vector3D v2){
 						v1.y + v2.y,
 						v1.z + v2.z);
 }
+
 public Vector3D sum(Vector3D v){
-	return sum(this, v);
-	}
+	return Vector3D.sum(this, v);
+}
 
 public String toString(){
 	return "Vector3D("	+x+", "
@@ -63,7 +67,7 @@ public static void main(String args[]){
 	Vector3D result = new Vector3D(3.0, 3.0, 3.0);
 
 	System.out.println(v1.scalarProduct(v2) == 6.0);
-	System.out.println(scalarProduct(v1,v2) == 6.0);
+	System.out.println(Vector3D.scalarProduct(v1,v2) == 6.0);
 
 	System.out.println((v1.sum(v2)).scalarProduct(v1) == 9.0);
 	System.out.println(scalarProduct(sum(v1, v2),v1) == 9.0);
