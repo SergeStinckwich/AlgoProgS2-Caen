@@ -5,9 +5,9 @@ private double y;
 private double z;
 
 public Vector3D(double xInit, double yInit, double zInit){
-	x = xInit;
-	y = yInit;
-	z = zInit;
+	this.x = xInit;
+	this.y = yInit;
+	this.z = zInit;
 }
 
 public Vector3D(Vector3D v){
@@ -53,9 +53,9 @@ public Vector3D sum(Vector3D v){
 }
 
 public String toString(){
-	return "Vector3D("	+x+", "
-						+y+", "
-						+z
+	return "Vector3D("	+this.x+", "
+						+this.y+", "
+						+this.z
 					+")";
 }
 
@@ -70,10 +70,10 @@ public static void main(String args[]){
 	System.out.println(Vector3D.scalarProduct(v1,v2) == 6.0);
 
 	System.out.println((v1.sum(v2)).scalarProduct(v1) == 9.0);
-	System.out.println(scalarProduct(sum(v1, v2),v1) == 9.0);
+	System.out.println(Vector3D.scalarProduct(Vector3D.sum(v1, v2),v1) == 9.0);
 
 	System.out.println(v1.crossProduct(zero).toString().equals("Vector3D(0.0, 0.0, 0.0)"));
-	System.out.println(crossProduct(v1,zero).toString().equals("Vector3D(0.0, 0.0, 0.0)"));
+	System.out.println(Vector3D.crossProduct(v1,zero).toString().equals("Vector3D(0.0, 0.0, 0.0)"));
 
 	System.out.println(v1.copy().equals(v1) == true);
 	System.out.println((v1==v3) == false);
