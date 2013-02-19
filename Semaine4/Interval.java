@@ -44,8 +44,8 @@ class Interval {
 		System.out.println(oneFour.contains(2) == true);
 		System.out.println(twoThree.isIncludedIn(oneFour) == true);
 
-		System.out.println((oneFour.intersectWith(twoThree)).equals(twoThree));
-		System.out.println((oneThree.intersectWith(twoFour)).equals(twoThree));
+		System.out.println((oneFour.intersectWith(twoThree)).equals(twoThree) == true);
+		System.out.println((oneThree.intersectWith(twoFour)).equals(twoThree) == true);
 
 		System.out.println(emptyInterval.equals(emptyInterval)==true);
 		System.out.println(oneFour.equals(oneThree)==false);
