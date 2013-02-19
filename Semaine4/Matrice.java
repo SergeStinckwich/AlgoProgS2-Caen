@@ -58,7 +58,7 @@ class Matrice {
 		for (int i = 0; i< a.width; i++)
 			for (int j = 0; j < a.height; j++)
 				for (int k = 0; k < a.width; k++)
-					result.m[i][j] = result.m[i][j]+ this.m[i][k]*a.m[k][j];
+					result.m[i][j] = result.m[i][j]+this.m[i][k]*a.m[k][j];
 		return result;
 	}
 
@@ -76,8 +76,8 @@ class Matrice {
 		Matrice result = new Matrice(width, height);
 		for (int i=0; i<width; i++)
 			for (int j = 0; j < height; j++)
-				if (i==j) result.m[i][j] = 1;
-						else result.m[i][j] =0;
+				if (i == j) result.m[i][j] = 1;
+						else result.m[i][j] = 0;
 		return result;
 	}
 
