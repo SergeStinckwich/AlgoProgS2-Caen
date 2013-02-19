@@ -50,31 +50,36 @@ class Matrice {
 		return result;
 	}
 
-	public void setAsZeroedMatrice()
+	public static Matrice zeroedMatrice(int width, int height)
 	{
+		Matrice result = new Matrice(width, height);
 		for (int i=0; i<width; i++)
 			for (int j = 0; j < height; j++)
-				m[i][j] = 0;
+				result.m[i][j] = 0;
+		return result;
 	}
 
-	public void setAsUnityMatrice()
+	public static Matrice unityMatrice(int width, int height)
 	{
+		Matrice result = new Matrice(width, height);
 		for (int i=0; i<width; i++)
 			for (int j = 0; j < height; j++)
-				if (i==j) m[i][j] = 1;
-						else m[i][j] =0;
+				if (i==j) result.m[i][j] = 1;
+						else result.m[i][j] =0;
+		return result;
 	}
+
 
 	public static void main(String args[]){
 		double m[][] = {{1.0, 1.0, 1.0},
 						{1.0, 1.0, 1.0},
 						{1.0, 1.0, 1.0}};
-		Matrice a = new Matrice(m);
-		Matrice b = new Matrice(m);
-		Matrice zero = new Matrice(3, 3);
-		zero.setAsZeroedMatrice();
-		Matrice unity = new Matrice(3, 3);
-		unity.setAsUnityMatrice();
+
+
+		Matrice a 		= new Matrice(m);
+		Matrice b 		= new Matrice(m);
+		Matrice zero 	= zeroedMatrice(3, 3);
+		Matrice unity 	= unityMatrice(3, 3);
 
 		System.out.println(a.toString().equals(
 				"{{1.0, 1.0, 1.0}, {1.0, 1.0, 1.0}, {1.0, 1.0, 1.0}}"));
