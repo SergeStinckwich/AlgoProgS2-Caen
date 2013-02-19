@@ -29,14 +29,14 @@ public double scalarProduct(Vector3D v){
 		return scalarProduct(this, v);
 	}
 
-public static Vector3D vectorialProduct(Vector3D v1, Vector3D v2){
+public static Vector3D crossProduct(Vector3D v1, Vector3D v2){
 	return new Vector3D(v1.y*v2.z - v1.z*v2.y,
 					v1.z*v2.x - v1.x*v2.z,
 					v1.x*v2.y - v1.y*v2.x);
 }
 
-public Vector3D vectorialProduct(Vector3D v){
-	return vectorialProduct(this, v);
+public Vector3D crossProduct(Vector3D v){
+	return crossProduct(this, v);
 }
 
 public static Vector3D sum(Vector3D v1, Vector3D v2){
@@ -68,8 +68,8 @@ public static void main(String args[]){
 	System.out.println((v1.sum(v2)).scalarProduct(v1) == 9.0);
 	System.out.println(scalarProduct(sum(v1, v2),v1) == 9.0);
 
-	System.out.println(v1.vectorialProduct(zero).toString().equals("Vector3D(0.0, 0.0, 0.0)"));
-	System.out.println(vectorialProduct(v1,zero).toString().equals("Vector3D(0.0, 0.0, 0.0)"));
+	System.out.println(v1.crossProduct(zero).toString().equals("Vector3D(0.0, 0.0, 0.0)"));
+	System.out.println(crossProduct(v1,zero).toString().equals("Vector3D(0.0, 0.0, 0.0)"));
 
 	System.out.println(v1.copy().equals(v1) == true);
 	System.out.println((v1==v3) == false);
