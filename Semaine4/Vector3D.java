@@ -78,5 +78,5 @@ public static void main(String args[]){
 	System.out.println(v1.copy().equals(v1) == true);
 	System.out.println((v1==v3) == false);
 	System.out.println(v1.equals(v3) == true);
-	}
+}
 }

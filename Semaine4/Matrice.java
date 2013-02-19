@@ -16,6 +16,18 @@ class Matrice {
 		this.height = height;
 	}
 
+	public int width(){
+		return width;
+	}
+
+	public int height(){
+		return height;
+	}
+
+	public static Matrice fromArray(double m[][]){
+		return new Matrice(m);
+	}
+
 	public String toString(){
 		String result = "";
 		result = result + "{";
@@ -74,10 +86,13 @@ class Matrice {
 		double m[][] 	= {{1.0, 1.0, 1.0},
 						   {1.0, 1.0, 1.0},
 						   {1.0, 1.0, 1.0}};
-		Matrice a 		= new Matrice(m);
-		Matrice b 		= new Matrice(m);
+		Matrice a 		= Matrice.fromArray(m);
+		Matrice b 		= Matrice.fromArray(m);
 		Matrice zero 	= Matrice.zeroedMatrice(3, 3);
 		Matrice unity 	= Matrice.unityMatrice(3, 3);
+
+		System.out.println(a.width() == 3);
+		System.out.println(a.height() == 3);
 
 		System.out.println(a.toString().equals(
 				"{{1.0, 1.0, 1.0}, {1.0, 1.0, 1.0}, {1.0, 1.0, 1.0}}"));
