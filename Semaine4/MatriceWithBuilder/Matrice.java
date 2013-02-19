@@ -16,6 +16,47 @@ class Matrice {
 		this.height = height;
 	}
 
+	public Matrice(Builder builder){
+		this.m = builder.m;
+		this.width = builder.width;
+		this.height = builder.height;
+		if (this.m == null)
+			this.m = new double[this.width][this.height];
+
+	}
+
+	public static Builder builder() {
+		return new Builder();
+	}
+
+	public static class Builder{
+			private double m [][];
+			private int width;
+			private int height;
+
+		public Builder withValues(double m[][])
+		{
+			this.m = m;
+			this.withWidth(m.length);
+			this.withHeight(m[0].length);
+			return this;
+		}
+
+		public Builder withWidth(int width){
+			this.width = width;
+			return this;
+		}
+
+		public Builder withHeight(int height){
+			this.height = height;
+			return this;
+		}
+
+		public Matrice build(){
+			return new Matrice(this);
+		}
+	}
+
 	public int width(){
 		return width;
 	}
@@ -25,7 +66,7 @@ class Matrice {
 	}
 
 	public static Matrice fromArray(double m[][]){
-		return new Matrice(m);
+		return Matrice.builder().withValues(m).build();
 	}
 
 	public String toString(){
@@ -64,22 +105,30 @@ class Matrice {
 
 	public static Matrice zeroedMatrice(int width, int height)
 	{
-		return new Matrice(width, height);
+		return Matrice.builder()
+					  .withWidth(width)
+					  .withHeight(height)
+					  .build();
 	}
 
 	public static Matrice identityMatrice(int width, int height)
 	{
 		// Only works on square matrice (width == height)
-		Matrice result = new Matrice(width, height);
+		Matrice result = Matrice.builder()
+						  		.withWidth(width)
+						  		.withHeight(height)
+						  		.build();
 		for (int i=0; i<width; i++)
 			result.m[i][i] = 1;
 		return result;
 	}
 
+
 	public static void main(String args[]){
 		double m[][] 	= {{1.0, 1.0, 1.0},
 						   {1.0, 1.0, 1.0},
 						   {1.0, 1.0, 1.0}};
+
 		Matrice a 		= Matrice.fromArray(m);
 		Matrice b 		= Matrice.fromArray(m);
 		Matrice zero 	= Matrice.zeroedMatrice(3, 3);
