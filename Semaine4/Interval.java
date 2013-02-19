@@ -13,7 +13,7 @@ class Interval {
 	public void setMin(int a){min = a;}
 	public void setMax(int a){max = a;}
 
-	public String toString() {return "["+min+";"+max+"]";}
+	public String toString() {return "["+min+","+max+"]";}
 
 	public int length() {return max-min;}
 
@@ -34,7 +34,7 @@ class Interval {
 		}
 
 	public boolean isAnEmptyInterval(){
-		return this.equals(new Interval());}
+		return this.min == this.max;}
 
 	public static void main(String[] args) {
 		Interval emptyInterval = new Interval();
@@ -46,16 +46,16 @@ class Interval {
 		Interval threeFour = new Interval(3,4);
 
 		System.out.println(emptyInterval.getMin() == 0);
+		System.out.println(emptyInterval.getMax() == 0);
 		System.out.println(oneFour.contains(2) == true);
+		System.out.println((oneTwo.toString()).equals("[1,2]"));
 		System.out.println(twoThree.isIncludedIn(oneFour) == true);
-
+		System.out.println(emptyInterval.isAnEmptyInterval() == true);
 		System.out.println((oneFour.intersectWith(twoThree)).equals(twoThree) == true);
 		System.out.println((oneThree.intersectWith(twoFour)).equals(twoThree) == true);
 		System.out.println((oneTwo.intersectWith(threeFour)).isAnEmptyInterval() == true);
-
 		System.out.println(emptyInterval.equals(emptyInterval)==true);
 		System.out.println(oneFour.equals(oneThree)==false);
-
 		System.out.println(oneFour.length() == 3);
 	}
 }
