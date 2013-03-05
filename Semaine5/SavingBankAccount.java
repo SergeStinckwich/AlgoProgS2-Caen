@@ -8,9 +8,20 @@ class SavingBankAccount extends BankAccount {
 	this.savingRate = savingRate;
 }
 
+	public String toString(){
+		return "SavingBankAccount(identifier="
+				+this.getIdentifier()
+				+", amount="
+				+this.getAmount()
+				+", savingRate="
+				+savingRate
+				+", yearOfInterests="
+				+yearOfInterests
+				+")";
+	}
 	public void setYearOfInterests(int yearOfInterests)
 	{this.yearOfInterests = yearOfInterests;}
 
 	public String getAccountType()
-	{return "Bank Account with interests";}
+	{return "SavingBankAccount";}
 }
