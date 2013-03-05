@@ -5,7 +5,7 @@ private float width;
 public float getWidth(){return width;}
 public void setWidth(float width){this.width = width;}
 
-public float surface(){return width*width;}
+public float surface(){return this.getWidth()*this.getWidth();}
 
 public Square(float x, float y, float width){
 	super(x,y);
