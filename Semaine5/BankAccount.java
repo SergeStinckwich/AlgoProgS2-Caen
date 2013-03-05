@@ -19,6 +19,10 @@ class BankAccount {
 				+")";
 	}
 
+	public void deposit(float v){balance = balance+v;}
+
+	public void withdraw(float v){balance = balance-v;}
+
 	public String getAccountType(){return "BankAccount";}
 
 	public BankAccount(){}

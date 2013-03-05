@@ -29,10 +29,12 @@ class InterestsCalculation{
 		BankAccount account1 = new BankAccount();
 		account1.setIdentifier("A01");
 		account1.setBalance(1000f);
+		account1.deposit(100.0f);
 
 		SavingBankAccount account2;
 		account2 = new SavingBankAccount ("E99", 1000f, 0.1f);
 		account2.setYearOfInterests(5);
+		account2.withdraw(1000.0f);
 		
 		BankAccount account3 = account1;
 		System.out.println(account3);
