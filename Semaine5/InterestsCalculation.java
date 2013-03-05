@@ -6,23 +6,10 @@ class InterestsCalculation{
 		Scanner scan = new Scanner(System.in);
 		int result = scan.nextInt();
 		scan.nextLine();
-		System.out.print("Identifier=");
-		String identifier = scan.nextLine();
-		System.out.print("Balance=");
-		float balance = scan.nextFloat();
-		scan.nextLine();
 		if (result == 1){
-			return new BankAccount(identifier, balance);
+			return BankAccount.edit();
 		}
-		System.out.print("Saving rate=");
-		float savingRate = scan.nextFloat();
-		scan.nextLine();
-		System.out.print("Year of interests=");	
-		int yearOfInterests = scan.nextInt();
-		scan.nextLine();
-		SavingsBankAccount account = new SavingsBankAccount(identifier, balance, savingRate);
-		account.setYearOfInterests(yearOfInterests);
-		return account;
+		return SavingsBankAccount.edit();
 	}
 
 	public static void main(String [] args){
