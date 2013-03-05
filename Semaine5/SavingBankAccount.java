@@ -2,17 +2,17 @@ class SavingBankAccount extends BankAccount {
 
 	private float savingRate;
 	private int yearOfInterests;
-	public SavingBankAccount(String identifier, float amount,
+	public SavingBankAccount(String identifier, float balance,
 			float savingRate){
-	super(identifier, amount);
+	super(identifier, balance);
 	this.savingRate = savingRate;
 }
 
 	public String toString(){
 		return "SavingBankAccount(identifier="
 				+this.getIdentifier()
-				+", amount="
-				+this.getAmount()
+				+", balance="
+				+this.getBalance()
 				+", savingRate="
 				+savingRate
 				+", yearOfInterests="
@@ -22,8 +22,8 @@ class SavingBankAccount extends BankAccount {
 	public void setYearOfInterests(int yearOfInterests)
 	{this.yearOfInterests = yearOfInterests;}
 
-	public float getAmount(){
-		return super.getAmount()+super.getAmount()*savingRate*yearOfInterests;}
+	public float getBalance(){
+		return super.getBalance()+super.getBalance()*savingRate*yearOfInterests;}
 
 	public String getAccountType()
 	{return "SavingBankAccount";}

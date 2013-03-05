@@ -8,11 +8,11 @@ class InterestsCalculation{
 		scan.nextLine();
 		System.out.print("Identifier=");
 		String identifier = scan.nextLine();
-		System.out.print("Amount=");
-		float amount = scan.nextFloat();
+		System.out.print("Balance=");
+		float balance = scan.nextFloat();
 		scan.nextLine();
 		if (result == 1){
-			return new BankAccount(identifier, amount);
+			return new BankAccount(identifier, balance);
 		}
 		System.out.print("Saving rate=");
 		float savingRate = scan.nextFloat();
@@ -20,7 +20,7 @@ class InterestsCalculation{
 		System.out.print("Year of interests=");	
 		int yearOfInterests = scan.nextInt();
 		scan.nextLine();
-		SavingBankAccount account = new SavingBankAccount(identifier, amount, savingRate);
+		SavingBankAccount account = new SavingBankAccount(identifier, balance, savingRate);
 		account.setYearOfInterests(yearOfInterests);
 		return account;
 	}
@@ -28,7 +28,7 @@ class InterestsCalculation{
 	public static void main(String [] args){
 		BankAccount account1 = new BankAccount();
 		account1.setIdentifier("A01");
-		account1.setAmount(1000f);
+		account1.setBalance(1000f);
 
 		SavingBankAccount account2;
 		account2 = new SavingBankAccount ("E99", 1000f, 0.1f);

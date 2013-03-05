@@ -1,21 +1,21 @@
 class BankAccount {
 	
 	private String identifier;
-	private float amount;
+	private float balance;
 
 	public String getIdentifier(){return identifier;}
 	
 	public void setIdentifier(String identifier){this.identifier = identifier;}
 
-	public float getAmount(){return amount;}
+	public float getBalance(){return balance;}
 
-	public void setAmount(float amount){this.amount = amount;}
+	public void setBalance(float balance){this.balance = balance;}
 
 	public String toString(){
 		return "BankAccount(identifier="
 				+identifier
-				+", amount="
-				+amount
+				+", balance="
+				+balance
 				+")";
 	}
 
@@ -23,8 +23,8 @@ class BankAccount {
 
 	public BankAccount(){}
 
-	public BankAccount(String identifier, float amount){
+	public BankAccount(String identifier, float balance){
 		this.identifier = identifier;
-		this.amount = amount;
+		this.balance = balance;
 	}
 }
