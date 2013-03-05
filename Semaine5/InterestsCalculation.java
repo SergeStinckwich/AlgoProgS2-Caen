@@ -1,22 +1,25 @@
 import java.util.*;
 class InterestsCalculation{
 
-	public BankAccount editBankAccount(){
-		System.out.println("1) BankAccount 2) SavingBankAccount");
+	public static BankAccount editBankAccount(){
+		System.out.print("1) BankAccount 2) SavingBankAccount=");
 		Scanner scan = new Scanner(System.in);
 		int result = scan.nextInt();
-		System.out.println("Identifier=");
+		scan = new Scanner(System.in);
+		System.out.print("Identifier=");
 		String identifier = scan.nextLine();
-		System.out.println("Amount=");
+		scan = new Scanner(System.in);
+		System.out.print("Amount=");
 		float amount = scan.nextFloat();
-		if (result == 1)
-		{
+		if (result == 1){
 			return new BankAccount(identifier, amount);
 		}
-		System.out.println("Saving rate=");
+		System.out.print("Saving rate=");
 		float savingRate = scan.nextFloat();
-		System.out.println("Year of interests=");	
+		scan = new Scanner(System.in);
+		System.out.print("Year of interests=");	
 		int yearOfInterests = scan.nextInt();
+		scan = new Scanner(System.in);
 		SavingBankAccount account = new SavingBankAccount(identifier, amount, savingRate);
 		account.setYearOfInterests(yearOfInterests);
 		return account;
@@ -27,11 +30,10 @@ class InterestsCalculation{
 		SavingBankAccount account2;
 		account2 = new SavingBankAccount ("E99", 1000f, 0.1f);
 		account2.setYearOfInterests(5);
-
-		BankAccount c;
-		c = account1;
-		System.out.println(c);
-		c = account2;
-		System.out.println(c);
+		BankAccount account3 = account1;
+		System.out.println(account3);
+		account3 = account2;
+		System.out.println(account3);
+		System.out.println(InterestsCalculation.editBankAccount());
     }
 }

@@ -22,6 +22,9 @@ class SavingBankAccount extends BankAccount {
 	public void setYearOfInterests(int yearOfInterests)
 	{this.yearOfInterests = yearOfInterests;}
 
+	public float getAmount(){
+		return super.getAmount()+super.getAmount()*savingRate*yearOfInterests;}
+
 	public String getAccountType()
 	{return "SavingBankAccount";}
 }
