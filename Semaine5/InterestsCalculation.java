@@ -26,14 +26,20 @@ class InterestsCalculation{
 	}
 
 	public static void main(String [] args){
-		BankAccount account1 = new BankAccount ("A01", 1000f);
+		BankAccount account1 = new BankAccount();
+		account1.setIdentifier("A01");
+		account1.setAmount(1000f);
+
 		SavingBankAccount account2;
 		account2 = new SavingBankAccount ("E99", 1000f, 0.1f);
 		account2.setYearOfInterests(5);
+		
 		BankAccount account3 = account1;
 		System.out.println(account3);
 		account3 = account2;
+		
 		System.out.println(account3);
+		
 		System.out.println(InterestsCalculation.editBankAccount());
     }
 }

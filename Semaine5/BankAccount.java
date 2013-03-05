@@ -5,10 +5,11 @@ class BankAccount {
 
 	public String getIdentifier(){return identifier;}
 	
-	public String getAccountType()
-	{return "BankAccount";}
+	public void setIdentifier(String identifier){this.identifier = identifier;}
 
-	public float getAmount(){ return amount;}
+	public float getAmount(){return amount;}
+
+	public void setAmount(float amount){this.amount = amount;}
 
 	public String toString(){
 		return "BankAccount(identifier="
@@ -17,6 +18,11 @@ class BankAccount {
 				+amount
 				+")";
 	}
+
+	public String getAccountType(){return "BankAccount";}
+
+	public BankAccount(){}
+
 	public BankAccount(String identifier, float amount){
 		this.identifier = identifier;
 		this.amount = amount;
