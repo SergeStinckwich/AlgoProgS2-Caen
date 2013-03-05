@@ -20,7 +20,7 @@ class InterestsCalculation{
 		System.out.print("Year of interests=");	
 		int yearOfInterests = scan.nextInt();
 		scan.nextLine();
-		SavingBankAccount account = new SavingBankAccount(identifier, balance, savingRate);
+		SavingsBankAccount account = new SavingsBankAccount(identifier, balance, savingRate);
 		account.setYearOfInterests(yearOfInterests);
 		return account;
 	}
@@ -31,11 +31,11 @@ class InterestsCalculation{
 		account1.setBalance(1000f);
 		account1.deposit(100.0f);
 
-		SavingBankAccount account2;
-		account2 = new SavingBankAccount ("E99", 1000f, 0.1f);
+		SavingsBankAccount account2;
+		account2 = new SavingsBankAccount ("E99", 1000f, 0.1f);
 		account2.setYearOfInterests(5);
 		account2.withdraw(1000.0f);
-		
+
 		BankAccount account3 = account1;
 		System.out.println(account3);
 		account3 = account2;
