@@ -34,7 +34,7 @@ class BankAccount {
 
 	public void withdraw(float v){balance = balance-v;}
 
-	public String getAccountType(){return "BankAccount";}
+	public String getAccountType(){return this.getClass().getName();}
 
 	public BankAccount(){}
 

@@ -6,9 +6,7 @@ class InterestsCalculation{
 		Scanner scan = new Scanner(System.in);
 		int result = scan.nextInt();
 		scan.nextLine();
-		if (result == 1){
-			return BankAccount.edit();
-		}
+		if (result == 1) return BankAccount.edit();
 		return SavingsBankAccount.edit();
 	}
 
