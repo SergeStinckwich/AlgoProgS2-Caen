@@ -1,4 +1,4 @@
-class Figure {
+public class Figure {
 	
 	private float x;
 	private float y;

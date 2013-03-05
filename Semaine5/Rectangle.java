@@ -1,4 +1,4 @@
-class Rectangle extends Square {
+public class Rectangle extends Square {
 	
 	private float height;
 

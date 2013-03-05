@@ -1,4 +1,4 @@
-class Factory extends Building {
+public class Factory extends Building {
 	String companyName;
 
 	public Factory(String owner, double surface,

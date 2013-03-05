@@ -1,5 +1,5 @@
 import java.util.*;
-class InterestsCalculation{
+public class InterestsCalculation{
 
 	public static BankAccount editBankAccount(){
 		System.out.print("1) BankAccount 2) SavingBankAccount=");

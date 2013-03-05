@@ -1,4 +1,4 @@
-class Building {
+public class Building {
 	private String owner;
 	private double surface;
 	private String address;

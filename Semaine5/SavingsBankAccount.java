@@ -1,5 +1,5 @@
 import java.util.*;
-class SavingsBankAccount extends BankAccount {
+public class SavingsBankAccount extends BankAccount {
 
 	private float savingRate;
 	private int yearOfInterests;

@@ -1,5 +1,5 @@
 import java.util.*;
-class BankAccount {
+public class BankAccount {
 	
 	private String identifier;
 	private float balance;

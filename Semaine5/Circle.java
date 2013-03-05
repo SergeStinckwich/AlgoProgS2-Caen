@@ -1,4 +1,4 @@
-class Circle extends Figure {
+public class Circle extends Figure {
 
 private float radius;
 

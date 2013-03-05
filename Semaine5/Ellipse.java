@@ -1,4 +1,4 @@
-class Ellipse extends Circle {
+public class Ellipse extends Circle {
 
 private float radius2;
 
