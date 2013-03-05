@@ -5,21 +5,21 @@ class InterestsCalculation{
 		System.out.print("1) BankAccount 2) SavingBankAccount=");
 		Scanner scan = new Scanner(System.in);
 		int result = scan.nextInt();
-		scan = new Scanner(System.in);
+		scan.nextLine();
 		System.out.print("Identifier=");
 		String identifier = scan.nextLine();
-		scan = new Scanner(System.in);
 		System.out.print("Amount=");
 		float amount = scan.nextFloat();
+		scan.nextLine();
 		if (result == 1){
 			return new BankAccount(identifier, amount);
 		}
 		System.out.print("Saving rate=");
 		float savingRate = scan.nextFloat();
-		scan = new Scanner(System.in);
+		scan.nextLine();
 		System.out.print("Year of interests=");	
 		int yearOfInterests = scan.nextInt();
-		scan = new Scanner(System.in);
+		scan.nextLine();
 		SavingBankAccount account = new SavingBankAccount(identifier, amount, savingRate);
 		account.setYearOfInterests(yearOfInterests);
 		return account;
