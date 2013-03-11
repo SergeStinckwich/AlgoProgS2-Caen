@@ -3,7 +3,9 @@ public class Building {
 	private double surface;
 	private String address;
 
-	public double computeTaxes(){return 5.0*surface;}
+	private static final double taxesPerSquareMeters = 5.0;
+
+	public double computeTaxes(){return taxesPerSquareMeters*surface;}
 
 	public String toString(){
 		return "Building("
