@@ -1,12 +1,24 @@
 class BuildingStatistics  {
 	
 	public static double meanTaxes(Building buildings[]){
-	int numberOfBuildings = buildings.length;
-	double sum = 0.0;
-	for (int i=0; i < numberOfBuildings-1; i++)
+		int numberOfBuildings = buildings.length;
+		double sum = 0.0;
+		for (int i=0; i < numberOfBuildings-1; i++)
 		sum = sum + buildings[i].computeTaxes();
-	return sum/numberOfBuildings;
-}
+		return sum/numberOfBuildings;
+	}
+
+	public static Building buildingWithHighestTaxes(Building buildings[]){
+	int numberOfBuildings = buildings.length;
+	double maxTaxes = 0.0;
+	int buildingWithHighestTaxes = 0;
+	for (int i=0; i < numberOfBuildings-1; i++)
+		if (buildings[i].computeTaxes()>maxTaxes){
+			buildingWithHighestTaxes = i;
+			maxTaxes = buildings[i].computeTaxes();
+		}
+	return buildings[buildingWithHighestTaxes];
+	}
 
 public static void main(String[] args) {
 		Building buildings[]= new Building[6];
@@ -17,7 +29,8 @@ public static void main(String[] args) {
 		buildings[4]= new Building("John", 2000, "RRR");
 		buildings[5]= new Building("Bill", 3000, "ZZZ");
 
-		System.out.println(meanTaxes(buildings));
+		System.out.println("Means of taxes = "+meanTaxes(buildings));
+		System.out.println("Building with highest taxes="+buildingWithHighestTaxes(buildings));
 	}
 
 }
