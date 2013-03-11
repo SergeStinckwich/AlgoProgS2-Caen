@@ -9,15 +9,15 @@ class BuildingStatistics  {
 	}
 
 	public static Building buildingWithHighestTaxes(Building buildings[]){
-	int numberOfBuildings = buildings.length;
-	double maxTaxes = 0.0;
-	int buildingWithHighestTaxes = 0;
-	for (int i=0; i < numberOfBuildings-1; i++)
-		if (buildings[i].computeTaxes()>maxTaxes){
-			buildingWithHighestTaxes = i;
-			maxTaxes = buildings[i].computeTaxes();
-		}
-	return buildings[buildingWithHighestTaxes];
+		int numberOfBuildings = buildings.length;
+		double maxTaxes = 0.0;
+		int buildingWithHighestTaxes = 0;
+		for (int i=0; i < numberOfBuildings-1; i++)
+			if (buildings[i].computeTaxes()>maxTaxes){
+				buildingWithHighestTaxes = i;
+				maxTaxes = buildings[i].computeTaxes();
+			}
+		return buildings[buildingWithHighestTaxes];
 	}
 
 public static void main(String[] args) {
