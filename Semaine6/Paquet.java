@@ -8,7 +8,11 @@ public abstract class Paquet implements Comparable, Shufflable{
 	public Card[] getCards(){
 		return cards;
 	}
-	
+
+	public Card at(int i){
+		return cards[i];
+	}
+
 	public int cardsNumber()
 	{return cards.length;}
 
