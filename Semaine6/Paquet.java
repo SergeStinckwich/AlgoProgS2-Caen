@@ -5,6 +5,22 @@ public abstract class Paquet implements Comparable, Shufflable{
 
 	private Hauteurs hauteurs;
 
+	public Card[] getCards(){
+		return cards;
+	}
+	
+	public int cardsNumber()
+	{return cards.length;}
+
+	public String toString(){
+		return "Paquet("+this.cardsNumber()+")";
+	}
+	public void setSymbols(Symbol symbols[]){
+		this.symbols = symbols;}
+
+	public void setHauteurs(Hauteurs hauteurs){
+		this.hauteurs = hauteurs;}
+
 	public void shuffle(){
 		Random generator = new Random();
 		for (int i=0; i<cards.length; i++) {
@@ -24,4 +40,14 @@ public abstract class Paquet implements Comparable, Shufflable{
 		for (int i=0; i<cutPosition; i++)
 			tmp[i-cutPosition+cards.length] = cards[i];
 	}
+
+	public void creePaquet(Hauteurs hauteurs, Symbol symbols[]){
+		this.setHauteurs(hauteurs);
+		this.setSymbols(symbols);
+		int numberOfCards = hauteurs.size()*symbols.length;
+		cards = new Card[numberOfCards];
+		for (int i=0; i< hauteurs.size(); i++)
+			for (int j=0; j < symbols.length; j++)
+				cards[i] = new Card(hauteurs.at(i), symbols[j]);
+	}	
 }
