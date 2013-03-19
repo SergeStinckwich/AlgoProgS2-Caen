@@ -1,12 +1,11 @@
 public class Game{
 
 public static void main(String args[]){
-	
 	int numberOfPlayer = 2;
 
 	System.out.println("Initialisation du paquet de cartes ...");
 	WarDeck deck = new WarDeck("War Card Game Deck");
-	deck.shuffle();
+	deck.cut();
 
 	System.out.println("Création des tas de cartes pour chaque joueur et pour la bataille ...");
 	CardStack playerCardStack[] = new CardStack[2];
@@ -53,7 +52,6 @@ public static void main(String args[]){
 	}
 	System.out.println("Le joueur 1 possède "+playerCardStack[0].cardsNumber()+" cartes.");
 	System.out.println("Le joueur 2 possède "+playerCardStack[1].cardsNumber()+" cartes.");
-
 	}
 
 	if (playerCardStack[0].isEmpty() && playerCardStack[1].isEmpty())

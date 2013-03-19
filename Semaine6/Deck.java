@@ -22,7 +22,7 @@ public abstract class Deck implements Comparable, Shufflable{
 
 	public String toString(){
 		String cardsContents="";
-		for (int i=0; i < this.cardsNumber(); i++)
+		for (int i = 0; i < this.cardsNumber(); i++)
 			cardsContents = cardsContents
 							+ ", "
 							+ cards[i].toString();
@@ -37,8 +37,8 @@ public abstract class Deck implements Comparable, Shufflable{
 		this.hauteurs = hauteurs;}
 
 	public void shuffle(){
-		Random generator = new Random(1000);
-		for (int i=0; i<cards.length; i++) {
+		Random generator = new Random(10);
+		for (int i = 0; i < cards.length; i++) {
 			int randomPosition = generator.nextInt(cards.length);
     		Card temp = cards[i];
     		cards[i] = cards[randomPosition];
@@ -47,13 +47,14 @@ public abstract class Deck implements Comparable, Shufflable{
     }
 
 	public void cut(){
-		Random generator = new Random(1000);
+		Random generator = new Random(10);
 		int cutPosition = generator.nextInt(cards.length);
 		Card tmp[] = new Card[cards.length];
-		for (int i=cutPosition; i<cards.length; i++)
+		for (int i = cutPosition; i < cards.length; i++)
 			tmp[i-cutPosition] = cards[i];
-		for (int i=0; i<cutPosition; i++)
+		for (int i = 0; i < cutPosition; i++)
 			tmp[i-cutPosition+cards.length] = cards[i];
+		cards = tmp;
 	}
 
 	public void buildDeck(Hauteurs hauteurs, Symbol symbols[]){
