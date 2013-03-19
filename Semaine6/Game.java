@@ -8,6 +8,7 @@ public static void main(String args[]){
 
 for (int n=0; n < numberOfGames; n++){
 	boolean gameOver = false;
+	System.out.println("===============================================");
 	System.out.println("Partie numéro "+n);
 	System.out.println("Initialisation du paquet de cartes ...");
 	WarDeck deck = new WarDeck("War Card Game Deck");
