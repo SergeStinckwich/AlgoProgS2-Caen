@@ -3,6 +3,7 @@ public class Game{
 
 public static void main(String args[]){
 	int numberOfPlayer = 2;
+	boolean gameOver = false;
 
 	System.out.println("Initialisation du paquet de cartes ...");
 	WarDeck deck = new WarDeck("War Card Game Deck");
@@ -24,8 +25,10 @@ public static void main(String args[]){
 	Card card0, card1;
 	Random g = new Random();
 	System.out.println("Démarrage du jeu ...");
-	while((!playerCardStack[0].isEmpty())&&(!playerCardStack[1].isEmpty()))
+
+	while(!gameOver)
 	{
+
 		card0 = playerCardStack[0].throwFirstCard();
 		card1 = playerCardStack[1].throwFirstCard();
 
@@ -44,8 +47,12 @@ public static void main(String args[]){
 		if (deck.equals(card0, card1)){
 			System.out.println("Bataille !");
 			// Mettre deux cartes cachées avant de relancer une bataille
+			if (playerCardStack[0].isEmpty()||playerCardStack[1].isEmpty())
+				gameOver = true;
+			else {
 			warBattleCardStack.addCard(playerCardStack[0].throwFirstCard());
 			warBattleCardStack.addCard(playerCardStack[1].throwFirstCard());
+		}
 		}
 		else {
 			if (deck.greaterThan(card0, card1))
@@ -64,6 +71,9 @@ public static void main(String args[]){
 	}
 	System.out.println("Le joueur 1 possède "+playerCardStack[0].cardsNumber()+" cartes.");
 	System.out.println("Le joueur 2 possède "+playerCardStack[1].cardsNumber()+" cartes.");
+
+	if (!gameOver)
+		gameOver = (playerCardStack[0].isEmpty())||(playerCardStack[1].isEmpty());
 	}
 
 	if (playerCardStack[0].isEmpty() && playerCardStack[1].isEmpty())
