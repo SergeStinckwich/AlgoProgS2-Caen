@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Game{
 
 public static void main(String args[]){
@@ -5,7 +6,7 @@ public static void main(String args[]){
 
 	System.out.println("Initialisation du paquet de cartes ...");
 	WarDeck deck = new WarDeck("War Card Game Deck");
-	deck.cut();
+	deck.shuffle();
 
 	System.out.println("Création des tas de cartes pour chaque joueur et pour la bataille ...");
 	CardStack playerCardStack[] = new CardStack[2];
@@ -15,20 +16,27 @@ public static void main(String args[]){
 
 	System.out.println("Distribution des cartes aux joueurs ...");
 	int k = 0;
-	for (int i=0; i<deck.cardsNumber(); i++){
+	for (int i = 0; i < deck.cardsNumber(); i++){
 		playerCardStack[k].addCard(deck.at(i));
 		k++; if (k==2) k=0;
 	}
 
 	Card card0, card1;
+	Random g = new Random();
 	System.out.println("Démarrage du jeu ...");
 	while((!playerCardStack[0].isEmpty())&&(!playerCardStack[1].isEmpty()))
 	{
 		card0 = playerCardStack[0].throwFirstCard();
 		card1 = playerCardStack[1].throwFirstCard();
 
-		warBattleCardStack.addCard(card1);
-		warBattleCardStack.addCard(card0);
+		if (g.nextBoolean()){
+			warBattleCardStack.addCard(card1);
+			warBattleCardStack.addCard(card0);
+		}
+		else {
+			warBattleCardStack.addCard(card0);
+			warBattleCardStack.addCard(card1);
+		}
 
 		System.out.println("Joueur 1 joue: "+ card0);
 		System.out.println("Joueur 2 joue: "+ card1);

@@ -40,11 +40,11 @@ public abstract class Deck implements Comparable, Shufflable{
 		// Fisher-Yates shuffle algorithm
 		// https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
 		Random generator = new Random();
-		for (int i = cards.length-1; i == 1; i--) {
-			int randomPosition = generator.nextInt(i);
+		for 	(int i = cards.length-1; i >= 1; i--) {
+			int j = generator.nextInt(i);
     		Card temp = cards[i];
-    		cards[i] = cards[randomPosition];
-    		cards[randomPosition] = temp;
+    		cards[i] = cards[j];
+    		cards[j] = temp;
     	}
     }
 

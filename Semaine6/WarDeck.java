@@ -21,11 +21,10 @@ public class WarDeck extends Deck {
         Symbol symboles [] = {trefle, carreau, coeur, pique};
         buildDeck(hauteurs, symboles);
  		this.name = name;
-	}
+ 	}
 
 	public static void main(String args[]){
 		WarDeck myDeck = new WarDeck("Un paquet pour le jeu de la bataille");
 		myDeck.shuffle();
-		System.out.println(myDeck);
 	}
 }
