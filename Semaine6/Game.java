@@ -2,6 +2,8 @@ import java.util.Random;
 public class Game{
 
 public static void main(String args[]){
+	// Règle de la Bataille
+	// https://fr.wikipedia.org/wiki/Bataille_(jeu_de_cartes)
 	int numberOfPlayer = 2;
 	int numberOfGames = 1000;
 	int n1=0, n2=0;
@@ -39,6 +41,7 @@ for (int n=0; n < numberOfGames; n++){
 		card1 = playerCardStack[1].throwFirstCard();
 
 		// Les cartes ne sont pas forcément récupéré dans le bon ordre
+		// Permet de raccourcir la durée des parties
 		if (g.nextBoolean()){
 			warBattleCardStack.addCard(card1);
 			warBattleCardStack.addCard(card0);
@@ -97,7 +100,7 @@ for (int n=0; n < numberOfGames; n++){
 
 System.out.println("===============================================");
 System.out.println("===============================================");
-System.out.println("Le joueur 1 gagne "+ n1+" fois sur "+numberOfGames);
-System.out.println("Le joueur 2 gagne "+ n2+" fois sur "+numberOfGames);
+System.out.println("Le joueur 1 gagne "+ n1 +" fois sur "+numberOfGames);
+System.out.println("Le joueur 2 gagne "+ n2 +" fois sur "+numberOfGames);
 }
 }
