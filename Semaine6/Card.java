@@ -16,11 +16,10 @@ public class Card extends AbstractCard{
 	}
 
 	public String toString(){
-		return "Carte("
-			+ this.getHauteur()
-			+ ", "
-			+ this.getSymbol()
-			+")";
+		return
+			this.getHauteur()
+			+ " de "
+			+ this.getSymbol().getName();
 	}
 
 }

@@ -3,8 +3,12 @@ public class Game{
 
 public static void main(String args[]){
 	int numberOfPlayer = 2;
-	boolean gameOver = false;
+	int numberOfGames = 1000;
+	int n1=0, n2=0;
 
+for (int n=0; n < numberOfGames; n++){
+	boolean gameOver = false;
+	System.out.println("Partie numéro "+n);
 	System.out.println("Initialisation du paquet de cartes ...");
 	WarDeck deck = new WarDeck("War Card Game Deck");
 	deck.shuffle();
@@ -25,10 +29,11 @@ public static void main(String args[]){
 	Card card0, card1;
 	Random g = new Random();
 	System.out.println("Démarrage du jeu ...");
+	int step = 0;
 
 	while(!gameOver)
 	{
-
+		step++;
 		card0 = playerCardStack[0].throwFirstCard();
 		card1 = playerCardStack[1].throwFirstCard();
 
@@ -80,8 +85,18 @@ public static void main(String args[]){
 		System.out.println("Jeu nul.");
 	else {
 		if (playerCardStack[0].isEmpty())
-			System.out.println("Le joueur 2 a gagné la partie.");
+			{System.out.println("Le joueur 2 a gagné la partie en "+step+" coups.");
+			n2++;}
 		else
-			System.out.println("Le joueur 1 a gagné la partie.");}
+			{System.out.println("Le joueur 1 a gagné la partie en "+step+" coups.");
+			n1++;}
+
+	}
+}
+
+System.out.println("===============================================");
+System.out.println("===============================================");
+System.out.println("Le joueur 1 gagne "+ n1+" fois sur "+numberOfGames);
+System.out.println("Le joueur 2 gagne "+ n2+" fois sur "+numberOfGames);
 }
 }
