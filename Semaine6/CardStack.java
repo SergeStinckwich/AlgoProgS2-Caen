@@ -12,6 +12,9 @@ public class CardStack {
 		return first;
 	}
 
+	public int cardsNumber(){
+		return cards.size();
+	}
 	public boolean isEmpty(){
 		return cards.isEmpty();
 	}

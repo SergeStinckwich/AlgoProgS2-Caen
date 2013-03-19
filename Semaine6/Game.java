@@ -8,10 +8,11 @@ public static void main(String args[]){
 	WarDeck deck = new WarDeck("War Card Game Deck");
 	deck.shuffle();
 
-	System.out.println("Création des tas de cartes pour chaque joueur ...");
+	System.out.println("Création des tas de cartes pour chaque joueur et pour la bataille ...");
 	CardStack playerCardStack[] = new CardStack[2];
 	playerCardStack[0] = new CardStack();
 	playerCardStack[1] = new CardStack();
+	CardStack warBattleCardStack = new CardStack();
 
 	System.out.println("Distribution des cartes aux joueurs ...");
 	int k = 0;
@@ -27,20 +28,31 @@ public static void main(String args[]){
 		card0 = playerCardStack[0].throwFirstCard();
 		card1 = playerCardStack[1].throwFirstCard();
 
+		warBattleCardStack.addCard(card0);
+		warBattleCardStack.addCard(card1);
+
 		System.out.println("Joueur 1 joue: "+ card0);
 		System.out.println("Joueur 2 joue: "+ card1);
-		if (deck.greaterThan(card0, card1))
+		if (deck.equals(card0, card1)){
+			System.out.println("Egalité.");
+		}
+		else {
+			if (deck.greaterThan(card0, card1))
 			{
 				System.out.println("Joueur 1 gagne la bataille.");
-				playerCardStack[0].addCard(card0);
-				playerCardStack[0].addCard(card1);
+				while (!warBattleCardStack.isEmpty())
+					playerCardStack[0].addCard(warBattleCardStack.throwFirstCard());
 			}
 			else
 			{
 			System.out.println("Joueur 2 gagne la bataille.");
-			playerCardStack[1].addCard(card0);
-			playerCardStack[1].addCard(card1);
+				while (!warBattleCardStack.isEmpty())
+					playerCardStack[1].addCard(warBattleCardStack.throwFirstCard());
+
 		}
+	}
+	System.out.println("Le joueur 1 possède "+playerCardStack[0].cardsNumber()+" cartes.");
+	System.out.println("Le joueur 2 possède "+playerCardStack[1].cardsNumber()+" cartes.");
 
 	}
 	if (playerCardStack[0].isEmpty())

@@ -16,8 +16,9 @@ public abstract class Deck implements Comparable, Shufflable{
 		return cards[i];
 	}
 
-	public int cardsNumber()
-	{return cards.length;}
+	public int cardsNumber(){
+		return cards.length;
+	}
 
 	public String toString(){
 		String cardsContents="";
@@ -46,7 +47,7 @@ public abstract class Deck implements Comparable, Shufflable{
     }
 
 	public void cut(){
-		Random generator = new Random();
+		Random generator = new Random(1000);
 		int cutPosition = generator.nextInt(cards.length);
 		Card tmp[] = new Card[cards.length];
 		for (int i=cutPosition; i<cards.length; i++)

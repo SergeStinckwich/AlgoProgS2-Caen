@@ -7,6 +7,10 @@ public class WarDeck extends Deck {
 		 			.greaterThan(card1.getHauteur(), card2.getHauteur());
 		}
 
+	public boolean equals(Card card1, Card card2){
+		return (card1.getHauteur()).equals(card2.getHauteur());
+	}
+	
 	public WarDeck(String name){
 		String tab [] = {"7","8","9","10","V","D","R","A"};
         Hauteurs hauteurs = new Hauteurs(tab);
