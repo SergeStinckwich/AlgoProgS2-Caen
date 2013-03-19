@@ -37,9 +37,11 @@ public abstract class Deck implements Comparable, Shufflable{
 		this.hauteurs = hauteurs;}
 
 	public void shuffle(){
-		Random generator = new Random(10);
-		for (int i = 0; i < cards.length; i++) {
-			int randomPosition = generator.nextInt(cards.length);
+		// Fisher-Yates shuffle algorithm
+		// https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
+		Random generator = new Random();
+		for (int i = cards.length-1; i == 1; i--) {
+			int randomPosition = generator.nextInt(i);
     		Card temp = cards[i];
     		cards[i] = cards[randomPosition];
     		cards[randomPosition] = temp;
