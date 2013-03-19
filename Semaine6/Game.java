@@ -29,6 +29,7 @@ public static void main(String args[]){
 		card0 = playerCardStack[0].throwFirstCard();
 		card1 = playerCardStack[1].throwFirstCard();
 
+		// Les cartes ne sont pas forcément récupéré dans le bon ordre
 		if (g.nextBoolean()){
 			warBattleCardStack.addCard(card1);
 			warBattleCardStack.addCard(card0);
@@ -41,7 +42,10 @@ public static void main(String args[]){
 		System.out.println("Joueur 1 joue: "+ card0);
 		System.out.println("Joueur 2 joue: "+ card1);
 		if (deck.equals(card0, card1)){
-			System.out.println("Egalité.");
+			System.out.println("Bataille !");
+			// Mettre deux cartes cachées avant de relancer une bataille
+			warBattleCardStack.addCard(playerCardStack[0].throwFirstCard());
+			warBattleCardStack.addCard(playerCardStack[1].throwFirstCard());
 		}
 		else {
 			if (deck.greaterThan(card0, card1))
