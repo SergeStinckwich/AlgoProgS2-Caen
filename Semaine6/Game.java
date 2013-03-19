@@ -28,8 +28,8 @@ public static void main(String args[]){
 		card0 = playerCardStack[0].throwFirstCard();
 		card1 = playerCardStack[1].throwFirstCard();
 
-		warBattleCardStack.addCard(card0);
 		warBattleCardStack.addCard(card1);
+		warBattleCardStack.addCard(card0);
 
 		System.out.println("Joueur 1 joue: "+ card0);
 		System.out.println("Joueur 2 joue: "+ card1);
@@ -55,9 +55,13 @@ public static void main(String args[]){
 	System.out.println("Le joueur 2 possède "+playerCardStack[1].cardsNumber()+" cartes.");
 
 	}
-	if (playerCardStack[0].isEmpty())
-		System.out.println("Le joueur 2 a gagné la partie.");
-	else
-		System.out.println("Le joueur 1 a gagné la partie.");
+
+	if (playerCardStack[0].isEmpty() && playerCardStack[1].isEmpty())
+		System.out.println("Jeu nul.");
+	else {
+		if (playerCardStack[0].isEmpty())
+			System.out.println("Le joueur 2 a gagné la partie.");
+		else
+			System.out.println("Le joueur 1 a gagné la partie.");}
 }
 }

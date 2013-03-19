@@ -26,9 +26,9 @@ public abstract class Deck implements Comparable, Shufflable{
 			cardsContents = cardsContents
 							+ ", "
 							+ cards[i].toString();
-		return "Paquet("
+		return "Deck(cartes={"
 			+cardsContents
-			+")";
+			+"})";
 	}
 	public void setSymbols(Symbol symbols[]){
 		this.symbols = symbols;}
@@ -37,7 +37,7 @@ public abstract class Deck implements Comparable, Shufflable{
 		this.hauteurs = hauteurs;}
 
 	public void shuffle(){
-		Random generator = new Random();
+		Random generator = new Random(1000);
 		for (int i=0; i<cards.length; i++) {
 			int randomPosition = generator.nextInt(cards.length);
     		Card temp = cards[i];

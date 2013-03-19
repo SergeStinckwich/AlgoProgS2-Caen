@@ -24,7 +24,7 @@ public class CardStack {
 	}
 
 	public String toString(){
-		return "TBD";
+		return cards.toString();
 	}
 
 }
