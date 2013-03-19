@@ -19,6 +19,11 @@ public class Hauteurs{
 			if (hauteur.equals(hauteurs[i])) return i;
 		return -1;
 	}
+
+	public boolean greaterThan(String h1, String h2){
+		return this.atElement(h1) < this.atElement(h2);
+	}
+
 	public String toString(){
 		String tmp="";
 		for (int i=0; i<this.size();i++)

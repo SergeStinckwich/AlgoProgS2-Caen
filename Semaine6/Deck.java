@@ -1,10 +1,13 @@
 import java.util.*;
-public abstract class Paquet implements Comparable, Shufflable{
+public abstract class Deck implements Comparable, Shufflable{
 	private Symbol symbols[];
 	private Card cards [];
 
 	private Hauteurs hauteurs;
 
+	public Hauteurs getHauteurs(){
+		return hauteurs;
+	}
 	public Card[] getCards(){
 		return cards;
 	}
@@ -45,7 +48,7 @@ public abstract class Paquet implements Comparable, Shufflable{
 			tmp[i-cutPosition+cards.length] = cards[i];
 	}
 
-	public void creePaquet(Hauteurs hauteurs, Symbol symbols[]){
+	public void buildDeck(Hauteurs hauteurs, Symbol symbols[]){
 		this.setHauteurs(hauteurs);
 		this.setSymbols(symbols);
 		int numberOfCards = hauteurs.size()*symbols.length;

@@ -3,6 +3,7 @@ public class Building {
 	private double surface;
 	private String address;
 
+	// Définition d'une constante en Java (la valeur ne peut pas être modifiée)
 	private static final double taxesPerSquareMeters = 5.0;
 
 	public double computeTaxes(){return taxesPerSquareMeters*surface;}

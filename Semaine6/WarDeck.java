@@ -1,12 +1,13 @@
 import java.awt.Color;
-public class PaquetBataille extends Paquet {
+public class WarDeck extends Deck {
 	private String name;
 
 	public boolean greaterThan(Card card1, Card card2){
-		return true;
+		 return (this.getHauteurs())
+		 			.greaterThan(card1.getHauteur(), card2.getHauteur());
 		}
 
-	public PaquetBataille(String name){
+	public WarDeck(String name){
 		String tab [] = {"7","8","9","10","V","D","R","A"};
         Hauteurs hauteurs = new Hauteurs(tab);
         Symbol trefle = new Symbol("trefle", Color.black);
@@ -14,14 +15,14 @@ public class PaquetBataille extends Paquet {
         Symbol coeur = new Symbol("coeur", Color.red);
         Symbol pique = new Symbol("pique", Color.black);
         Symbol symboles [] = {trefle, carreau, coeur, pique};
-        creePaquet(hauteurs, symboles);
+        buildDeck(hauteurs, symboles);
  		this.name = name;
 	}
 
 	public static void main(String args[]){
-		PaquetBataille monPaquet = new PaquetBataille("Mon paquet");
-//		System.out.println(monPaquet.at(0));
-//		monPaquet.shuffle();
-//		System.out.println(monPaquet.at(0));
+		WarDeck monPaquet = new WarDeck("Un paquet pour le jeu de la bataille");
+		System.out.println(monPaquet.at(0));
+		monPaquet.shuffle();
+		System.out.println(monPaquet.at(0));
 	}
 }
