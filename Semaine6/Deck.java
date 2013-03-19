@@ -20,7 +20,14 @@ public abstract class Deck implements Comparable, Shufflable{
 	{return cards.length;}
 
 	public String toString(){
-		return "Paquet("+this.cardsNumber()+")";
+		String cardsContents="";
+		for (int i=0; i < this.cardsNumber(); i++)
+			cardsContents = cardsContents
+							+ ", "
+							+ cards[i].toString();
+		return "Paquet("
+			+cardsContents
+			+")";
 	}
 	public void setSymbols(Symbol symbols[]){
 		this.symbols = symbols;}
@@ -53,8 +60,11 @@ public abstract class Deck implements Comparable, Shufflable{
 		this.setSymbols(symbols);
 		int numberOfCards = hauteurs.size()*symbols.length;
 		cards = new Card[numberOfCards];
+		int k = 0;
 		for (int i=0; i< hauteurs.size(); i++)
-			for (int j=0; j < symbols.length; j++)
-				cards[i] = new Card(hauteurs.at(i), symbols[j]);
+			for (int j=0; j < symbols.length; j++){
+				cards[k] = new Card(hauteurs.at(i), symbols[j]);
+				k++;
+			}
 	}	
 }

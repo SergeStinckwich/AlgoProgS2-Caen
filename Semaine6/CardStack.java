@@ -6,8 +6,10 @@ public class CardStack {
 		cards = new Vector<Card>(); 
 	}
 
-	public Card firstCard(){
-		return cards.firstElement();
+	public Card throwFirstCard(){
+		Card first = cards.firstElement();
+		cards.removeElementAt(0);
+		return first;
 	}
 
 	public boolean isEmpty(){

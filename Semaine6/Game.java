@@ -20,8 +20,32 @@ public static void main(String args[]){
 		k++; if (k==2) k=0;
 	}
 
+	Card card0, card1;
 	System.out.println("Démarrage du jeu ...");
+	while((!playerCardStack[0].isEmpty())&&(!playerCardStack[1].isEmpty()))
+	{
+		card0 = playerCardStack[0].throwFirstCard();
+		card1 = playerCardStack[1].throwFirstCard();
 
+		System.out.println("Joueur 1 joue: "+ card0);
+		System.out.println("Joueur 2 joue: "+ card1);
+		if (deck.greaterThan(card0, card1))
+			{
+				System.out.println("Joueur 1 gagne la bataille.");
+				playerCardStack[0].addCard(card0);
+				playerCardStack[0].addCard(card1);
+			}
+			else
+			{
+			System.out.println("Joueur 2 gagne la bataille.");
+			playerCardStack[1].addCard(card0);
+			playerCardStack[1].addCard(card1);
+		}
 
+	}
+	if (playerCardStack[0].isEmpty())
+		System.out.println("Le joueur 2 a gagné la partie.");
+	else
+		System.out.println("Le joueur 1 a gagné la partie.");
 }
 }

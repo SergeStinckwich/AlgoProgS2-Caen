@@ -21,7 +21,7 @@ public class Hauteurs{
 	}
 
 	public boolean greaterThan(String h1, String h2){
-		return this.atElement(h1) < this.atElement(h2);
+		return this.atElement(h1) > this.atElement(h2);
 	}
 
 	public String toString(){

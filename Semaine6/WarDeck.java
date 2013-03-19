@@ -21,8 +21,6 @@ public class WarDeck extends Deck {
 
 	public static void main(String args[]){
 		WarDeck monPaquet = new WarDeck("Un paquet pour le jeu de la bataille");
-		System.out.println(monPaquet.at(0));
-		monPaquet.shuffle();
-		System.out.println(monPaquet.at(0));
+		System.out.println(monPaquet);
 	}
 }
