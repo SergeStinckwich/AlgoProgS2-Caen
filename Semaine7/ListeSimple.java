@@ -8,6 +8,14 @@ public class ListeSimple extends Liste {
 		_dernier = null;
 	}
 
+	public ListeSimple(int t[])
+	{	
+		ListeSimple tmp = new ListeSimple();
+		for (int i=t.length-1; i>=0; i--)
+			tmp.ajouterDebut(t[i]);
+		_premier = tmp.premierNoeud();
+		_dernier = tmp.dernierNoeud();
+	}
 	public boolean estVide()
 	{
 		return (_premier  == null);
@@ -83,11 +91,16 @@ public class ListeSimple extends Liste {
 		myList.ajouterDebut(5);
 		myList.ajouterFin(6);
 		System.out.println(myList.premierNoeud().getElement().equals(5));
-		System.out.println(myList.estVide()==false);
+		System.out.println(myList.estVide() == false);
 		System.out.println(myList.longueur() == 2);
 		System.out.println(myList.iemeNoeud(1).getElement().equals(5));
 		System.out.println(myList.iemeNoeud(2).getElement().equals(6));
 		System.out.println(myList.iemeNoeud(3) == null);
+
+		int t[] = {1, 2, 3, 4, 5};
+		ListeSimple myList2 = new ListeSimple(t);
+		System.out.println(myList2.premierNoeud().getElement().equals(1));
+		System.out.println(myList2.dernierNoeud().getElement().equals(5));
 		
 	}
 }
