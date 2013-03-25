@@ -143,11 +143,13 @@ public class ListeSimple extends Liste {
 
 		int t[] = {1, 2, 3, 4, 5};
 		ListeSimple myList2 = new ListeSimple(t);
+		// Vérifier que 1 est le premier élément de la liste
 		System.out.println(myList2.premierNoeud().getElement().equals(1));
+		// Vérifier que 5 est le dernier élément de la liste
 		System.out.println(myList2.dernierNoeud().getElement().equals(5));
-		// 1 appartient à t
+		// Vérifier que 1 appartient à t
 		System.out.println(myList2.appartient(1) == true);
-		// 6 n'appartient pas à t
+		// Vérifier que 6 n'appartient pas à t
 		System.out.println(myList2.appartient(6) == false);
 	}
 }
