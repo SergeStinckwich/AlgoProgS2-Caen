@@ -1,5 +1,5 @@
 public class ListeSimple extends Liste {
-	private Noeud _premier;
+	private NoeudSimple _premier;
 
 	public ListeSimple()
 	{
@@ -16,7 +16,7 @@ public class ListeSimple extends Liste {
 
 	public void ajouterDebut(Object element)
 	{
-		Noeud n = new NoeudSimple(element);
+		NoeudSimple n = new NoeudSimple(element);
 		if (this.estVide())
 		{
 			_premier = n;
