@@ -19,7 +19,7 @@ public abstract class Liste {
 	// public abstract Noeud ouEstElement(Object element);
 	// public abstract boolean supprimerPremier();
 	// public abstract boolean supprimerDernier();
-	// public abstract Noeud iemeNoeud(int num);
+	public abstract Noeud iemeNoeud(int num);
 	// public Object iemeElement(int num){
 	// 	Noeud ieme =iemeNoeud(num);
 	// 	if (ieme==null) return null;

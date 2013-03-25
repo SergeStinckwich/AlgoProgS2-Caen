@@ -54,6 +54,16 @@ public class ListeSimple extends Liste {
 		return _dernier;
 	}
 
+	public Noeud iemeNoeud(int i)
+	{
+		NoeudSimple courant = _premier;
+		for (int j=1; j<i; j++){
+			if (courant == null) return null;
+			courant = (NoeudSimple)courant.suivant();
+		}
+					return courant;
+	}
+
 	public int longueur(){
 		int sum=0;
 		NoeudSimple courant = _premier;
@@ -75,5 +85,9 @@ public class ListeSimple extends Liste {
 		System.out.println(myList.premierNoeud().getElement().equals(5));
 		System.out.println(myList.estVide()==false);
 		System.out.println(myList.longueur() == 2);
+		System.out.println(myList.iemeNoeud(1).getElement().equals(5));
+		System.out.println(myList.iemeNoeud(2).getElement().equals(6));
+		System.out.println(myList.iemeNoeud(3) == null);
+		
 	}
 }
