@@ -1,19 +1,16 @@
 public class ListeSimple extends Liste {
 	private NoeudSimple _premier;
-	private NoeudSimple _fin;
+	private NoeudSimple _dernier;
 
 	public ListeSimple()
 	{
 		_premier = null;
-		_fin = null;
+		_dernier = null;
 	}
 
 	public boolean estVide()
 	{
 		return (_premier  == null);
-		// if (_premier == null)
-		// return true;
-		// else return false; 
 	}
 
 	public void ajouterDebut(Object element)
@@ -22,7 +19,7 @@ public class ListeSimple extends Liste {
 		if (this.estVide())
 		{
 			_premier = n;
-			_fin = n;
+			_dernier = n;
 		}
 		else
 		{
@@ -37,12 +34,12 @@ public class ListeSimple extends Liste {
 		if (this.estVide())
 		{
 			_premier = n;
-			_fin = n;
+			_dernier = n;
 		}
 		else
 		{
-			_fin.setSuivant(n);
-			_fin = n;
+			_dernier.setSuivant(n);
+			_dernier = n;
 		}
 	}
 
@@ -52,6 +49,23 @@ public class ListeSimple extends Liste {
 	}
 
 
+	public NoeudSimple dernierNoeud()
+	{
+		return _dernier;
+	}
+
+	public int longueur(){
+		int sum=0;
+		NoeudSimple courant = _premier;
+		while(courant != null)
+		{
+			sum++;
+			courant = (NoeudSimple)courant.suivant();
+		}
+
+		return sum;
+	}
+
 	public static void main(String args[])
 	{
 		ListeSimple myList = new ListeSimple();
@@ -60,5 +74,6 @@ public class ListeSimple extends Liste {
 		myList.ajouterFin(6);
 		System.out.println(myList.premierNoeud().getElement().equals(5));
 		System.out.println(myList.estVide()==false);
+		System.out.println(myList.longueur() == 2);
 	}
 }

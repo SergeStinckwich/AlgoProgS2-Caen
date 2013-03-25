@@ -1,7 +1,7 @@
 
 public abstract class Liste {
 	public abstract Noeud premierNoeud();
-	// public abstract Noeud dernierNoeud();
+	public abstract Noeud dernierNoeud();
 	// public Object premierElement(){
 	//  	if (premierNoeud()==null) return null;
 	//  	return premierNoeud().getElement();
@@ -13,7 +13,7 @@ public abstract class Liste {
 	public abstract void ajouterDebut(Object element);
 	public abstract void ajouterFin(Object element);
 	public abstract boolean estVide();
-	// public abstract int longueur();
+	public abstract int longueur();
 	// public abstract boolean appartient(Object element);
 	// public abstract boolean noeudDansCetteListe(Noeud noeud);
 	// public abstract Noeud ouEstElement(Object element);
