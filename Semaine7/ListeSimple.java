@@ -11,14 +11,14 @@ public class ListeSimple extends Liste {
 	public ListeSimple(int t[])
 	{	
 		ListeSimple tmp = new ListeSimple();
-		for (int i=t.length-1; i>=0; i--)
+		for (int i = t.length-1; i >= 0; i--)
 			tmp.ajouterDebut(t[i]);
 		_premier = tmp.premierNoeud();
 		_dernier = tmp.dernierNoeud();
 	}
 	public boolean estVide()
 	{
-		return (_premier  == null);
+		return (_premier == null);
 	}
 
 	public void ajouterDebut(Object element)
@@ -65,7 +65,7 @@ public class ListeSimple extends Liste {
 	public Noeud iemeNoeud(int i)
 	{
 		NoeudSimple courant = _premier;
-		for (int j=1; j<i; j++){
+		for (int j = 1; j < i; j++){
 			if (courant == null) return null;
 			courant = (NoeudSimple)courant.suivant();
 		}
@@ -73,7 +73,7 @@ public class ListeSimple extends Liste {
 	}
 
 	public int longueur(){
-		int sum=0;
+		int sum = 0;
 		NoeudSimple courant = _premier;
 		while(courant != null)
 		{
