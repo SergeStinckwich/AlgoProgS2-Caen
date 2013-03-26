@@ -2,14 +2,14 @@
 public abstract class Liste {
 	public abstract Noeud premierNoeud();
 	public abstract Noeud dernierNoeud();
-	// public Object premierElement(){
-	//  	if (premierNoeud()==null) return null;
-	//  	return premierNoeud().getElement();
-	// }
-	// public Object dernierElement(){
-	// 	if (premierNoeud()==null) return null;
-	// 	return dernierNoeud().getElement();
-	// }
+	public Object premierElement(){
+	  	if (premierNoeud()==null) return null;
+	  	return premierNoeud().getElement();
+	 }
+	 public Object dernierElement(){
+	 	if (premierNoeud()==null) return null;
+	 	return dernierNoeud().getElement();
+	 }
 	public abstract void ajouterDebut(Object element);
 	public abstract void ajouterFin(Object element);
 	public abstract boolean estVide();

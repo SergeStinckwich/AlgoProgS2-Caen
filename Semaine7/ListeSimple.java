@@ -17,6 +17,15 @@ public class ListeSimple extends Liste {
 		_dernier = tmp.dernierNoeud();
 	}
 
+	protected NoeudSimple avant(NoeudSimple cible){
+		NoeudSimple courant = this.premierNoeud();
+		while (courant!=null){
+			if (courant.suivant() == cible) return courant;
+			courant = (NoeudSimple) courant.suivant();
+		}
+		return null;
+		} 
+
 	public Liste copieSuperficielle(){
 		Liste newListe = new ListeSimple();
 		NoeudSimple courant = (NoeudSimple)newListe.premierNoeud();
@@ -86,8 +95,7 @@ public class ListeSimple extends Liste {
 		}
 	}
 
-	public NoeudSimple premierNoeud()
-	{
+	public NoeudSimple premierNoeud(){
 		return _premier;
 	}
 
@@ -121,6 +129,7 @@ public class ListeSimple extends Liste {
 
 	public static void main(String args[])
 	{
+		// Créer une nouvelle liste vide
 		ListeSimple myList = new ListeSimple();
 		// Vérifier que la liste est vide
 		System.out.println(myList.estVide()==true);
@@ -141,6 +150,7 @@ public class ListeSimple extends Liste {
 		// Vérifier qu'il y a pas d'élément en position 3
 		System.out.println(myList.iemeNoeud(3) == null);
 
+		// Créer une liste à partir d'un tableau t
 		int t[] = {1, 2, 3, 4, 5};
 		ListeSimple myList2 = new ListeSimple(t);
 		// Vérifier que 1 est le premier élément de la liste
@@ -151,5 +161,9 @@ public class ListeSimple extends Liste {
 		System.out.println(myList2.appartient(1) == true);
 		// Vérifier que 6 n'appartient pas à t
 		System.out.println(myList2.appartient(6) == false);
+		// Vérifier que le noeud avant le premier noeud n'existe pas
+		System.out.println(myList2.avant(myList2.premierNoeud()) == null);
+		// Vérifier que le noeud avant le dernier noeud est le noeud contenant 4
+		System.out.println(myList2.avant(myList2.dernierNoeud()).getElement().equals(4));
 	}
 }
