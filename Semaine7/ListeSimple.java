@@ -147,50 +147,81 @@ public class ListeSimple extends Liste {
 		return sum;
 	}
 
+public void insererApres(Noeud noeud, Object element){
+	if ((noeud == null)||(!this.appartient(noeud)))
+		this.ajouterFin(element);
+	else {
+		NoeudSimple nouveauNoeud = new NoeudSimple(element);
+		nouveauNoeud.setSuivant(noeud.suivant());
+		noeud.setSuivant(nouveauNoeud);
+		if (_dernier == noeud) _dernier = nouveauNoeud;
+	}	
+}
 	public static void main(String args[])
 	{
 		// Créer une nouvelle liste vide
 		ListeSimple myList = new ListeSimple();
+
 		// Vérifier que la liste est vide
 		System.out.println(myList.estVide()==true);
+
 		// ajouter 5 en début de liste
 		myList.ajouterDebut(5);
+
 		// ajouter 6 en fin de liste
 		myList.ajouterFin(6);
+
 		// Vérifier que le premier noeud est 5
 		System.out.println(myList.premierNoeud().getElement().equals(5));
+
 		// Vérifier que la liste n'est plus vide
 		System.out.println(myList.estVide() == false);
+
 		// Vérifier que la liste est de longueur 2
 		System.out.println(myList.longueur() == 2);
+
 		// Vérifier que l'élément en position 1 est 5
 		System.out.println(myList.iemeNoeud(1).getElement().equals(5));
+
 		// Vérifier que l'élément en position 2 est 6
 		System.out.println(myList.iemeNoeud(2).getElement().equals(6));
+
 		// Vérifier qu'il y a pas d'élément en position 3
 		System.out.println(myList.iemeNoeud(3) == null);
 
 		// Créer une liste à partir d'un tableau t
 		int t[] = {1, 2, 3, 4, 5};
 		ListeSimple myList2 = new ListeSimple(t);
+
 		// Vérifier que 1 est le premier élément de la liste
 		System.out.println(myList2.premierNoeud().getElement().equals(1));
+
 		// Vérifier que 5 est le dernier élément de la liste
 		System.out.println(myList2.dernierNoeud().getElement().equals(5));
+
 		// Vérifier que 1 appartient à t
 		System.out.println(myList2.appartient(1) == true);
+
 		// Vérifier que 6 n'appartient pas à t
 		System.out.println(myList2.appartient(6) == false);
+
 		// Vérifier que le noeud avant le premier noeud n'existe pas
 		System.out.println(myList2.avant(myList2.premierNoeud()) == null);
+
 		// Vérifier que le noeud avant le dernier noeud est le noeud contenant 4
 		System.out.println(myList2.avant(myList2.dernierNoeud()).getElement().equals(4));
+
 		// Vérifier que la liste myList2 après suppression du premier noeud, commence par l'élement 2
 		myList2.supprimerPremier();
 		System.out.println(myList2.premierNoeud().getElement().equals(2));
+
 		// Vérifier que la liste myList2 après suppression du dernier noeud a
 		// comme dernier noeud 4.
 		myList2.supprimerDernier();
 		System.out.println(myList2.dernierNoeud().getElement().equals(4));
+
+		// Vérifier qu'insérer après le premier noeud, augmente la taille de la liste de 1
+		myList2.insererApres(myList2.premierNoeud(), 1);
+		System.out.println(myList2.longueur()==4);
 	}
 }

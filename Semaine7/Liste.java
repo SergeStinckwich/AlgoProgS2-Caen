@@ -28,7 +28,7 @@ public abstract class Liste {
 	// public abstract int positionElement(Object element);
 	// public abstract int positionNoeud(Noeud noeud);
 	public abstract Liste copieSuperficielle();
-	// public abstract void insererApres(Noeud noeud, Object element);
+	public abstract void insererApres(Noeud noeud, Object element);
 	// public abstract void insererAvant(Noeud noeud, Object element);
 	// public abstract void ajouterSimple(Liste l);
 	// public abstract void ajouterAvecNouveauNoeuds(Liste l);
