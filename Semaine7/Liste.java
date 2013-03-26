@@ -18,7 +18,7 @@ public abstract class Liste {
 	public abstract boolean noeudDansCetteListe(Noeud noeud);
 	// public abstract Noeud ouEstElement(Object element);
 	public abstract boolean supprimerPremier();
-	// public abstract boolean supprimerDernier();
+	public abstract boolean supprimerDernier();
 	public abstract Noeud iemeNoeud(int num);
 	public Object iemeElement(int num){
 		Noeud ieme =iemeNoeud(num);

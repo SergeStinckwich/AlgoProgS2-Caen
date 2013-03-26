@@ -99,7 +99,6 @@ public class ListeSimple extends Liste {
 		return _premier;
 	}
 
-
 	public NoeudSimple dernierNoeud()
 	{
 		return _dernier;
@@ -115,6 +114,18 @@ public class ListeSimple extends Liste {
 					return courant;
 	}
 
+	public boolean supprimerDernier(){
+		if (this.estVide()) return false;
+		if (this.longueur() == 1){
+			_premier = null;
+			_dernier = null;
+		}
+		else {
+			_dernier = (NoeudSimple)this.avant(_dernier);
+			_dernier.setSuivant(null);
+		}
+		return true;
+}
 	public boolean supprimerPremier(){
 		if (this.estVide()) return false;
 		if (this.longueur() == 1){
@@ -174,8 +185,12 @@ public class ListeSimple extends Liste {
 		System.out.println(myList2.avant(myList2.premierNoeud()) == null);
 		// Vérifier que le noeud avant le dernier noeud est le noeud contenant 4
 		System.out.println(myList2.avant(myList2.dernierNoeud()).getElement().equals(4));
-		// Vérifier que liste myList2 après suppression du premier noeud, commence par l'élement 2
+		// Vérifier que la liste myList2 après suppression du premier noeud, commence par l'élement 2
 		myList2.supprimerPremier();
 		System.out.println(myList2.premierNoeud().getElement().equals(2));
+		// Vérifier que la liste myList2 après suppression du dernier noeud a
+		// comme dernier noeud 4.
+		myList2.supprimerDernier();
+		System.out.println(myList2.dernierNoeud().getElement().equals(4));
 	}
 }
