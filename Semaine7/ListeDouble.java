@@ -27,6 +27,7 @@ public void ajouterFin(Object element){
 	super.ajouterFin(element);
 	NoeudDouble premier = (NoeudDouble)_premier;
 }
+
 public static void main(String args[])
 {
 	ListeDouble l = new ListeDouble();
