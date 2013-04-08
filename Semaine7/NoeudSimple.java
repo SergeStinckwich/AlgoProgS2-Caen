@@ -1,16 +1,19 @@
-public class NoeudSimple extends Noeud {
-private NoeudSimple _suivant;
-public NoeudSimple(Object element) {
-super(element);
-_suivant=null;
-}
+public class NoeudSimple extends Noeud{
+	private NoeudSimple _suivant;
+
+	public NoeudSimple(Object element){
+		super(element);
+		_suivant=null;
+	}
+
+	@Override
+	public Noeud suivant(){
+		return _suivant;
+	}
+
 @Override
-public Noeud suivant() {
-return _suivant;
-}
-@Override
-public void setSuivant( Noeud ns ) {
-_suivant=(NoeudSimple)ns;
+public void setSuivant(Noeud ns){
+	_suivant=(NoeudSimple)ns;
 }
 
 public static void main(String args[])
@@ -27,8 +30,5 @@ public static void main(String args[])
 	n2.setSuivant(n3);
 	n3.setSuivant(n4);
 	n4.setSuivant(null);
-
-
-
 }
 }

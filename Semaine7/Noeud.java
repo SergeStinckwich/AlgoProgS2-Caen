@@ -1,4 +1,3 @@
-
 public abstract class Noeud {
 	private Object _element;
 	public Noeud(Object element){
