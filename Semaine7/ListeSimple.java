@@ -1,6 +1,13 @@
 public class ListeSimple extends Liste {
-	private NoeudSimple _premier;
-	private NoeudSimple _dernier;
+	protected NoeudSimple _premier;
+	protected NoeudSimple _dernier;
+
+
+	public Liste creationListe(){
+		return new ListeSimple();}
+
+	public Noeud creationNoeud(Object element){
+		return new NoeudSimple(element);}
 
 	public ListeSimple()
 	{
@@ -68,7 +75,8 @@ public class ListeSimple extends Liste {
 	
 	public void ajouterDebut(Object element)
 	{
-		NoeudSimple n = new NoeudSimple(element);
+
+		NoeudSimple n = (NoeudSimple)this.creationNoeud(element);
 		if (this.estVide())
 		{
 			_premier = n;
@@ -82,8 +90,7 @@ public class ListeSimple extends Liste {
 	}
 
 	public void ajouterFin(Object element){
-		NoeudSimple n = new NoeudSimple(element);
-		if (this.estVide())
+		NoeudSimple n = (NoeudSimple)this.creationNoeud(element);		if (this.estVide())
 		{
 			_premier = n;
 			_dernier = n;
@@ -150,7 +157,7 @@ public class ListeSimple extends Liste {
 		if ((noeud == null)||(!this.appartient(noeud)))
 			this.ajouterFin(element);
 		else{
-			NoeudSimple nouveauNoeud = new NoeudSimple(element);
+			NoeudSimple nouveauNoeud = (NoeudSimple)creationNoeud(element);
 			nouveauNoeud.setSuivant(noeud.suivant());
 			noeud.setSuivant(nouveauNoeud);
 			if (_dernier == noeud) _dernier = nouveauNoeud;
