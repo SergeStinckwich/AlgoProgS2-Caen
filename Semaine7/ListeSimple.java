@@ -176,7 +176,7 @@ public class ListeSimple extends Liste {
 		NoeudSimple courant = _premier;
 		int position = 0;
 		while(courant != null){
-			if (courant.getElement()==element) return position;
+			if (courant.getElement() == element) return position;
 			courant = (NoeudSimple)courant.suivant();
 			position++;
 		}
@@ -200,7 +200,7 @@ public class ListeSimple extends Liste {
 
 	public void ajouterAvecNouveauNoeuds(Liste l){
 		Noeud n;
-		for (int i=0; i<=l.longueur()-1; i++){
+		for (int i=0; i<= l.longueur()-1; i++){
 			n = l.iemeNoeud(i);
 			this.ajouterFin(new NoeudSimple(n.getElement()));
 		}
@@ -222,7 +222,7 @@ public class ListeSimple extends Liste {
 		ListeSimple myList = new ListeSimple();
 
 		// Vérifier que la liste est vide
-		System.out.println(myList.estVide()==true);
+		System.out.println(myList.estVide() == true);
 
 		// ajouter 5 en début de liste
 		myList.ajouterDebut(5);
@@ -292,6 +292,6 @@ public class ListeSimple extends Liste {
 		int t2[] = {3, 2, 3, 4, 3, 5};
 		ListeSimple myList3 = new ListeSimple(t2);
 		Identique egalATrois = new Identique(3);
-		System.out.println(myList3.selectionElements(egalATrois).longueur()==3);
+		System.out.println(myList3.selectionElements(egalATrois).longueur() == 3);
 	}
 }
