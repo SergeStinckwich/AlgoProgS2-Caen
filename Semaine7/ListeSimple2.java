@@ -13,7 +13,7 @@ public class ListeSimple2 extends ListeSimple{
 	public void ajouterDebut(Object element){
 		// On réutilise ajouterDebut de la superclasse
 		super.ajouterDebut(element);
-		if (this.estVide()) _dernier = _premier;
+		if (this.longueur() == 1) _dernier = _premier;
 	}
 
 	public void ajouterFin(Object element){
