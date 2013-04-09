@@ -10,6 +10,10 @@ public class ListeSimple2 extends ListeSimple{
 			super(valeurs);
 	}
 
+	public NoeudSimple dernierNoeud(){
+		return _dernier;
+	}
+
 	public void ajouterDebut(Object element){
 		// On réutilise ajouterDebut de la superclasse
 		super.ajouterDebut(element);
@@ -27,6 +31,8 @@ public class ListeSimple2 extends ListeSimple{
 			_dernier.setSuivant(n);
 			_dernier = (NoeudSimple)_dernier.suivant();}
 	}
+
+
 
 public static void main(String args[])
 {
@@ -53,5 +59,7 @@ public static void main(String args[])
 	// Vérifier que la liste est de longueur 2
 	System.out.println(l1.longueur() == 2);
 
+	// Vérifier que le dernier noeud est 2
+	System.out.println(l1.dernierNoeud().getElement().equals(2));
 }
 }
