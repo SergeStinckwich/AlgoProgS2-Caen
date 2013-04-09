@@ -1,4 +1,4 @@
-public class ListeDouble extends ListeSimple{
+public class ListeDouble extends ListeSimple2{
 
 public ListeDouble(){
 	super();

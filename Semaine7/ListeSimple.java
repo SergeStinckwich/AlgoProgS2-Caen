@@ -1,7 +1,5 @@
 public class ListeSimple extends Liste {
 	protected NoeudSimple _premier;
-	protected NoeudSimple _dernier;
-
 
 	public Liste creationListe(){
 		return new ListeSimple();}
@@ -12,7 +10,6 @@ public class ListeSimple extends Liste {
 	public ListeSimple()
 	{
 		_premier = null;
-		_dernier = null;
 	}
 
 	public ListeSimple(int t[])
@@ -21,7 +18,6 @@ public class ListeSimple extends Liste {
 		for (int i = t.length-1; i >= 0; i--)
 			tmp.ajouterDebut(t[i]);
 		_premier = tmp.premierNoeud();
-		_dernier = tmp.dernierNoeud();
 	}
 
 	protected NoeudSimple avant(NoeudSimple cible){
@@ -75,31 +71,19 @@ public class ListeSimple extends Liste {
 	
 	public void ajouterDebut(Object element)
 	{
-
 		NoeudSimple n = (NoeudSimple)this.creationNoeud(element);
-		if (this.estVide())
-		{
-			_premier = n;
-			_dernier = n;
-		}
-		else
-		{
+		if (this.estVide()) _premier = n;
+		else {
 			n.setSuivant(_premier);
 			_premier = n;
 		}
 	}
 
 	public void ajouterFin(Object element){
-		NoeudSimple n = (NoeudSimple)this.creationNoeud(element);		if (this.estVide())
-		{
+		NoeudSimple n = (NoeudSimple)this.creationNoeud(element);
+		if (this.estVide())
 			_premier = n;
-			_dernier = n;
-		}
-		else
-		{
-			_dernier.setSuivant(n);
-			_dernier = n;
-		}
+		else (this.dernierNoeud()).setSuivant(n);
 	}
 
 	public NoeudSimple premierNoeud(){
@@ -107,7 +91,12 @@ public class ListeSimple extends Liste {
 	}
 
 	public NoeudSimple dernierNoeud(){
-		return _dernier;
+		NoeudSimple courant = _premier;
+		while (courant.suivant() != null)
+		{
+			courant = (NoeudSimple)courant.suivant();
+		}
+		return courant;
 	}
 
 	public Noeud iemeNoeud(int i){
@@ -121,23 +110,14 @@ public class ListeSimple extends Liste {
 
 	public boolean supprimerDernier(){
 		if (this.estVide()) return false;
-		if (this.longueur() == 1){
-			_premier = null;
-			_dernier = null;
-		}
-		else {
-			_dernier = (NoeudSimple)this.avant(_dernier);
-			_dernier.setSuivant(null);
-		}
+		if (this.longueur() == 1) _premier = null;
+		else ((NoeudSimple)this.avant(this.dernierNoeud())).setSuivant(null);
 		return true;
 	}
 
 	public boolean supprimerPremier(){
 		if (this.estVide()) return false;
-		if (this.longueur() == 1){
-			_premier = null;
-			_dernier = null;
-		}
+		if (this.longueur() == 1) _premier = null;
 		else _premier = (NoeudSimple)_premier.suivant();
 		return true;
 	}
@@ -160,7 +140,6 @@ public class ListeSimple extends Liste {
 			NoeudSimple nouveauNoeud = (NoeudSimple)creationNoeud(element);
 			nouveauNoeud.setSuivant(noeud.suivant());
 			noeud.setSuivant(nouveauNoeud);
-			if (_dernier == noeud) _dernier = nouveauNoeud;
 		}
 	}
 
