@@ -32,9 +32,21 @@ public class ListeSimple2 extends ListeSimple{
 			_dernier = (NoeudSimple)_dernier.suivant();}
 	}
 
-// La méthode supprimerDernier n'a pas besoin d'être redéfinie dans cette classe
+	public boolean supprimerDernier(){
+		NoeudSimple dernier = _dernier;
+		boolean result = super.supprimerDernier();
+		dernier.setSuivant(null);
+		return result;
+		}
 
-	public void ajouterSimple(Liste l){
+	public boolean supprimerPremier(){
+		if (this.estVide()) return false;
+		if (this.longueur() == 1) _premier = null;
+		else _premier = (NoeudSimple)_premier.suivant();
+		return true;
+	}
+
+		public void ajouterSimple(Liste l){
 		super.ajouterSimple(l);
 		_dernier = (NoeudSimple)l.dernierNoeud();
 	}
