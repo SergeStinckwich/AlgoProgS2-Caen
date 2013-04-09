@@ -6,9 +6,14 @@ public class ListeSimple2 extends ListeSimple{
 		super();
 	}
 
-	public ListeSimple2(int[] valeurs){
-			super(valeurs);
+	public ListeSimple2(int t[])
+	{	
+		ListeSimple2 tmp = new ListeSimple2();
+		for (int i = t.length-1; i >= 0; i--)
+			tmp.ajouterDebut(t[i]);
+		_premier = tmp.premierNoeud();
 	}
+
 
 	public NoeudSimple dernierNoeud(){
 		return _dernier;
@@ -17,6 +22,7 @@ public class ListeSimple2 extends ListeSimple{
 	public void ajouterDebut(Object element){
 		// On réutilise ajouterDebut de la superclasse
 		super.ajouterDebut(element);
+		//Lors du premier ajout, on positionne _dernier au bon endroit
 		if (this.longueur() == 1) _dernier = _premier;
 	}
 
