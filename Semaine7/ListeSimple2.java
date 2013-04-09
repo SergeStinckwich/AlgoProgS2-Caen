@@ -32,6 +32,7 @@ public class ListeSimple2 extends ListeSimple{
 			_dernier = (NoeudSimple)_dernier.suivant();}
 	}
 
+// La méthode supprimerDernier n'a pas besoin d'être redéfinie.
 
 
 public static void main(String args[])
@@ -61,5 +62,11 @@ public static void main(String args[])
 
 	// Vérifier que le dernier noeud est 2
 	System.out.println(l1.dernierNoeud().getElement().equals(2));
+
+	// Supprimer le dernier noeud
+	l1.supprimerDernier();
+
+	// Vérifier que la liste est de longueur 1
+	System.out.println(l1.longueur() == 1);
 }
 }
