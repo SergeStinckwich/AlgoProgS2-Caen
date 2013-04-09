@@ -45,7 +45,7 @@ public static void main(String args[])
 	l1.ajouterFin(2);
 
 	// Vérifier que le premier noeud est 1
-	System.out.println(l1.premierNoeud().getElement().equals(5));
+	System.out.println(l1.premierNoeud().getElement().equals(1));
 
 	// Vérifier que la liste n'est plus vide
 	System.out.println(l1.estVide() == false);
