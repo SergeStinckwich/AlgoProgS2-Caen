@@ -82,6 +82,10 @@ public class TestListeSimple2{
 			l2.avant(l2.premierNoeud()) == null);
 
 		setUp();
+		assertTrue("Vérifier que le noeud avant le deuxième noeud est le noeud de position 1",
+			l2.avant((NoeudSimple)l2.iemeNoeud(2)) == l2.iemeNoeud(1));
+
+		setUp();
 		assertTrue("Vérifier qu'il est possible de supprimer le premier élément d'une liste non vide",
 			l2.supprimerPremier());
 
@@ -96,9 +100,8 @@ public class TestListeSimple2{
 
 		setUp();
 		l2.supprimerDernier();
-		System.out.println(l2.dernierNoeud());
 		assertTrue("Vérifier que la liste l2 après suppression du dernier noeud a comme dernier noeud 9",
-		l2.dernierNoeud().getElement().equals(9));
+			l2.dernierNoeud().getElement().equals(9));
 
 		setUp();
 		l2.insererApres(l2.premierNoeud(), 1);
@@ -109,5 +112,6 @@ public class TestListeSimple2{
 		l2.insererAvant(l2.premierNoeud(), 0);
 		assertTrue("Vérifier qu'après avoir inséré avant le premier noeud, l'élément 0, on a l'élément 0 en tête de la liste",
 			l2.premierNoeud().getElement().equals(0));
+
 	}
 }

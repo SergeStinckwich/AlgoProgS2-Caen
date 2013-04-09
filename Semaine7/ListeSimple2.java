@@ -39,10 +39,11 @@ public class ListeSimple2 extends ListeSimple{
 	}
 
 	public boolean supprimerDernier(){
-		NoeudSimple dernier = _dernier;
+		NoeudSimple avantDernier = this.avant(_dernier);
+
 		boolean result = super.supprimerDernier();
 		if (this.estVide()) _dernier = null;
-			else _dernier = (this.avant(dernier));
+			else _dernier = avantDernier;
 		return result;
 		}
 
