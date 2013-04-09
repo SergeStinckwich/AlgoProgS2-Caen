@@ -12,8 +12,8 @@ public class ListeSimple2 extends ListeSimple{
 		for (int i = t.length-1; i >= 0; i--)
 			tmp.ajouterDebut(t[i]);
 		_premier = tmp.premierNoeud();
+		_dernier = tmp.dernierNoeud();
 	}
-
 
 	public NoeudSimple dernierNoeud(){
 		return _dernier;
@@ -52,7 +52,7 @@ public class ListeSimple2 extends ListeSimple{
 		return true;
 	}
 
-		public void ajouterSimple(Liste l){
+	public void ajouterSimple(Liste l){
 		super.ajouterSimple(l);
 		_dernier = (NoeudSimple)l.dernierNoeud();
 	}
@@ -64,39 +64,4 @@ public class ListeSimple2 extends ListeSimple{
 		super.insererApres(noeud, element);
 	}
 
-public static void main(String args[])
-{
-	// Une listeSimple2 est une ListeSimple avec en plus un dernier élément
-
-	// Créer une nouvelle liste vide
-	ListeSimple2 l1 = new ListeSimple2();
-
-	// Vérifier que la liste est vide
-	System.out.println(l1.estVide() == true);
-
-	// Ajouter 1 en début de liste
-	l1.ajouterDebut(1);
-
-	// Ajouter 2 en fin de liste
-	l1.ajouterFin(2);
-
-	// Vérifier que le premier noeud est 1
-	System.out.println(l1.premierNoeud().getElement().equals(1));
-
-	// Vérifier que la liste n'est plus vide
-	System.out.println(l1.estVide() == false);
-
-	// Vérifier que la liste est de longueur 2
-	System.out.println(l1.longueur() == 2);
-
-	// Vérifier que le dernier noeud est 2
-	System.out.println(l1.dernierNoeud().getElement().equals(2));
-
-	// Supprimer le dernier noeud
-	l1.supprimerDernier();
-
-	// Vérifier que la liste est de longueur 1
-	System.out.println(l1.longueur() == 1);
-
-}
 }

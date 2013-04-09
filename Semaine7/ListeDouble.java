@@ -1,10 +1,9 @@
 public class ListeDouble extends ListeSimple2{
-
-public ListeDouble(){
+	public ListeDouble(){
 	super();
-}
+	}
 
-public ListeDouble(int[] valeurs){
+	public ListeDouble(int[] valeurs){
 	super(valeurs);}
 
 public Noeud creationNoeud(Object element) {
