@@ -69,11 +69,10 @@ public class ListeSimple extends Liste {
 		return true;
 	}
 	
-	public void ajouterDebut(Object element)
-	{
+	public void ajouterDebut(Object element){
 		NoeudSimple n = (NoeudSimple)this.creationNoeud(element);
 		if (this.estVide()) _premier = n;
-		else {
+		else{
 			n.setSuivant(_premier);
 			_premier = n;
 		}

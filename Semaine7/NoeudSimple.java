@@ -6,18 +6,16 @@ public class NoeudSimple extends Noeud{
 		_suivant=null;
 	}
 
-	@Override
 	public Noeud suivant(){
 		return _suivant;
 	}
 
-@Override
-public void setSuivant(Noeud ns){
+	public void setSuivant(Noeud ns){
 	_suivant=(NoeudSimple)ns;
-}
+	}
 
-public static void main(String args[])
-{
+	public static void main(String args[])
+	{
 	// Exemples de noeuds simples
 	NoeudSimple n1, n2, n3, n4;
 
