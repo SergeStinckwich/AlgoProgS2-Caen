@@ -81,9 +81,17 @@ public class TestListeSimple{
 			l2.avant(l2.premierNoeud()) == null);
 
 		setUp();
+		assertTrue("Vérifier qu'il est possible de supprimer le premier élément d'une liste non vide",
+			l2.supprimerPremier());
+
+		setUp();
 		l2.supprimerPremier();
 		assertTrue("Vérifier que la liste l2 après suppression du premier noeud, commence par l'élement 2",
 			l2.premierNoeud().getElement().equals(2));
+
+		setUp();
+		assertTrue("Vérifier qu'il est possible de supprimer le dernier élément d'une liste non vide",
+			l2.supprimerDernier());
 
 		setUp();
 		l2.supprimerDernier();
