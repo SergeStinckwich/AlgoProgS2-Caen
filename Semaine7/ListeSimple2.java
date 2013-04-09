@@ -32,8 +32,19 @@ public class ListeSimple2 extends ListeSimple{
 			_dernier = (NoeudSimple)_dernier.suivant();}
 	}
 
-// La méthode supprimerDernier n'a pas besoin d'être redéfinie.
+// La méthode supprimerDernier n'a pas besoin d'être redéfinie dans cette classe
 
+	public void ajouterSimple(Liste l){
+		super.ajouterSimple(l);
+		_dernier = (NoeudSimple)l.dernierNoeud();
+	}
+
+	// On réutilise la méthode insererApres de la superclasse
+	// Il faut s'assurer que lorsqu'on insère après le dernier élément,
+	// la variable _dernier doit être également modifiée
+	public void insererApres(Noeud noeud, Object element){
+		super.insererApres(noeud, element);
+	}
 
 public static void main(String args[])
 {
@@ -68,5 +79,6 @@ public static void main(String args[])
 
 	// Vérifier que la liste est de longueur 1
 	System.out.println(l1.longueur() == 1);
+
 }
 }
