@@ -41,7 +41,8 @@ public class ListeSimple2 extends ListeSimple{
 	public boolean supprimerDernier(){
 		NoeudSimple dernier = _dernier;
 		boolean result = super.supprimerDernier();
-		dernier.setSuivant(null);
+		if (this.estVide()) _dernier = null;
+			else _dernier = (this.avant(dernier));
 		return result;
 		}
 

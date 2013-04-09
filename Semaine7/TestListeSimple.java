@@ -19,6 +19,7 @@ public class TestListeSimple{
 		if (condition) System.out.println("Test OK");
 		else System.out.println("Test FALSE!!!!");
 	}
+
 	public static void main(String args[])
 	{
 		setUp();
@@ -79,6 +80,10 @@ public class TestListeSimple{
 		setUp();
 		assertTrue("Vérifier que le noeud avant le premier noeud n'existe pas",
 			l2.avant(l2.premierNoeud()) == null);
+
+		setUp();
+		assertTrue("Vérifier que le noeud avant le deuxième noeud est le noeud de position 1",
+			l2.avant((NoeudSimple)l2.iemeNoeud(2)) == l2.iemeNoeud(1));
 
 		setUp();
 		assertTrue("Vérifier qu'il est possible de supprimer le premier élément d'une liste non vide",

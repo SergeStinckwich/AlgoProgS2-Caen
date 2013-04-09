@@ -96,6 +96,7 @@ public class TestListeSimple2{
 
 		setUp();
 		l2.supprimerDernier();
+		System.out.println(l2.dernierNoeud());
 		assertTrue("Vérifier que la liste l2 après suppression du dernier noeud a comme dernier noeud 9",
 		l2.dernierNoeud().getElement().equals(9));
 
